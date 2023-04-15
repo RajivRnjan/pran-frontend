@@ -1,10 +1,53 @@
-import React from 'react';
+import React, { useEffect,useState } from 'react';
 import { Link } from 'react-router-dom';
 import logo from '../Images/logo.svg';
 import avtar from '../Images/avtar.png';
 import {FaSearch} from 'react-icons/fa';
 
 function Navbar() {
+
+ const [leftNav,setLeftNav]=useState()
+
+
+ useEffect(()=>{
+ if(!localStorage.getItem("auth_token")){
+    setLeftNav(<div className="nav-right">
+    <ul className="nav-items">
+        <li><Link to ="/AboutUs">About Us</Link></li>
+        <li><Link to ="/ContactUs">Contact Us</Link></li>
+        
+        {/* <li>Sign up</li> */}
+    </ul>
+
+
+{/* <div >
+    <img src={avtar} className="avtar" alt="avtar" />
+</div> */}
+</div>)
+
+}
+else{
+    setLeftNav(<div className="nav-right">
+    <ul className="nav-items">
+        <li><Link to ="/AboutUs">BCA</Link></li>
+        <li><Link to ="/ContactUs">SEM 2</Link></li>
+        
+        {/* <li>Sign up</li> */}
+    </ul>
+
+
+<div >
+    <img src={avtar} style={{margin:10}} className="avtar" alt="avtar" />
+</div>
+</div>)
+}
+
+}
+,[] )
+
+
+//  useEffect()
+
     const searchstyle = {
         width: "100%",
   border: '3px solid black',
@@ -32,19 +75,7 @@ function Navbar() {
         </div>
         </div>
 
-        <div className="nav-right">
-            <ul className="nav-items">
-                <li><Link to ="/AboutUs">About Us</Link></li>
-                <li><Link to ="/ContactUs">Contact Us</Link></li>
-                
-                {/* <li>Sign up</li> */}
-            </ul>
-        
-
-        {/* <div >
-            <img src={avtar} className="avtar" alt="avtar" />
-        </div> */}
-        </div>
+        {leftNav}
         </div>
     
   )
