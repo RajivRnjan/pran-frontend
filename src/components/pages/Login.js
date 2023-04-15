@@ -1,4 +1,5 @@
 import React from 'react';
+import axios from 'axios';
 import '../../App.css';
 import Crousel from '../Crousel';
 import LoginSignupHome from './LoginSignupHome';
@@ -17,21 +18,23 @@ function Login() {
   };
 
 
-  // const submitHandler=(e)=>{
-  //       console.log();
-  //       console.log(e.target.password.value);
+  const submitHandler=(e)=>{
+      axios.post("https://pran.thefacts.space/api/users/userLogin",{
+        username:e.target.email.value,
+        password:e.target.password.value
+      }
+).then((res)=>{
+  console.log(res.data)
+  if(res.data.msg == "Login Successfully"){
+    localStorage.setItem("auth_token",res.data.auth_token)
+  }else{
+    alert(res.data.msg)
+  }
 
-  //       axios.post("httpdfsdf",{
-  //         email:e.target.email.value,
-  //         password:e.target.password.value
-  //       }).then((res)=>{
-  //           console.log(res);
-
-  //       }).catch((err)=>{
-  //         console.log(err);
-  //       })
-  //     e.preventDefault()
-  // }
+})
+       
+      e.preventDefault()
+  }
 
 
   return (
@@ -42,8 +45,8 @@ function Login() {
        <div className="login-form">
         <h2>Sign In</h2>
 
-        {/* <form onSubmit={submitHandler}> */}
-        <form >
+        <form onSubmit={submitHandler}>
+        
 
         <div className="input-container">
         <input type="email" name="email" placeholder='E-mail'/><IoMdContact size="25px" color="#5B5B5B"/>
