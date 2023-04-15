@@ -17,6 +17,13 @@ function Login() {
     navigate('/');
   };
 
+  const checkLogin =()=>{
+    if(localStorage.getItem("auth_token")){
+      navigate('/home');
+    }
+  }
+  checkLogin()
+
 
   const submitHandler=(e)=>{
       axios.post("https://pran.thefacts.space/api/users/userLogin",{
@@ -27,7 +34,9 @@ function Login() {
   console.log(res.data)
   if(res.data.msg == "Login Successfully"){
     localStorage.setItem("auth_token",res.data.auth_token)
-  }else{
+    checkLogin()
+  }
+  else{
     alert(res.data.msg)
   }
 
@@ -35,6 +44,9 @@ function Login() {
        
       e.preventDefault()
   }
+
+
+
 
 
   return (

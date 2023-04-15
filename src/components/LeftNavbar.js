@@ -1,11 +1,25 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import {AiTwotoneHome} from 'react-icons/ai';
 import {BsFillGridFill,BsMessenger,BsPeopleFill} from 'react-icons/bs';
 import {GiNotebook} from 'react-icons/gi';
 import {MdWifiCalling3} from 'react-icons/md';
 import {RiLogoutBoxRFill} from 'react-icons/ri';
+import { useNavigate } from 'react-router-dom';
 
 function LeftNavbar() {
+  const [login,setLogin] = useState(true)
+  const navigate=useNavigate()
+
+  useEffect(()=>{
+
+    const checkLogin=()=>{
+      if(!localStorage.getItem("auth_token")){
+        navigate('/login');
+      }
+    }
+    checkLogin()
+  })
+
   return (
     <>
     <div className="leftNavbarTopContainer">
@@ -42,7 +56,8 @@ function LeftNavbar() {
                 </div>
 
               <div className="lowerSection">
-                <div className="leftNavbarItem">
+                <div onClick={()=>{localStorage.clear(); setLogin(false)
+                }} className="leftNavbarItem">
               <RiLogoutBoxRFill size="20px" color="#5B5B5B" /> <li>Logout Us</li>
               </div>
               </div>
