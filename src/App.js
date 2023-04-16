@@ -13,6 +13,7 @@ import Terms from './components/pages/Terms';
 
 
 
+
 function App() {
   return (
     <>

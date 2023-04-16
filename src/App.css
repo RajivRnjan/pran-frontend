@@ -230,7 +230,7 @@ select{
 }
 
 .register-btn,.login-btn,.get-started,.sign-in,.sign-up{
-  
+  cursor: pointer;
   width:50%;
   border-radius: 5px;
   
