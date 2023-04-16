@@ -5,6 +5,11 @@ import googlePlay from '../Images/google play.png';
 import { Link } from 'react-router-dom';
               
 function Footer() {
+
+    const gotoTopWindow =()=> {
+        window.scrollTo({top: 0, left: 0, behavior: 'smooth'});
+      }
+
   return (
     <>
 
@@ -42,16 +47,16 @@ function Footer() {
 
                 <div className="middleTopRightItem">
                     <ul>
-                        <li><Link to="/PrivacyPolicy">Privacy Policy</Link></li>
-                        <li><Link to="/Terms">Terms & Conditions</Link></li>
-                        <li><Link to="/ContactUs">Contact Us</Link></li>
+                        <li onClick={gotoTopWindow}><Link to="/PrivacyPolicy">Privacy Policy</Link></li>
+                        <li onClick={gotoTopWindow}><Link to="/Terms">Terms & Conditions</Link></li>
+                        <li onClick={gotoTopWindow}><Link to="/ContactUs">Contact Us</Link></li>
                     </ul>
                 </div>
             </div>
             
         </div>
         <div className="rightFooter">
-            <img src={googlePlay} alt='googlePlay'/>
+            <Link to="https://play.google.com/store/search?q=pran%20vbu&c=apps"><img src={googlePlay} alt='googlePlay'/></Link>
         </div>
     </div>
             <div className="BottomFooter">

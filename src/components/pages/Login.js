@@ -17,7 +17,7 @@ function Login() {
   const navigate = useNavigate();
   
   const navigateToSignup = ()=>{
-    navigate('/');
+    navigate('/Signup');
   };
   
   const checkLogin =()=>{
@@ -93,7 +93,7 @@ function Login() {
        </div><br/>
        </form>
 
-       <p className="login-footer">Don't have an Account. <Link to= "/" >Click Here</Link></p><br/>
+       <p className="login-footer">Don't have an Account. <Link to= "/Signup" >Click Here</Link></p><br/>
 
       </div>
     </div>

@@ -1,6 +1,8 @@
 
 /*---########  Navbar CSS   ########---*/
-
+body{
+  background-color: var(--primary-bg-color);
+}
 #navbar a{
   text-decoration: none;
   color: white;
@@ -78,6 +80,8 @@
 /* Signup CSS */
 .background-img{
   width:100vw;
+  animation:fadePage;
+  animation-duration: 1s;
   /* height:100vh; */
   
   background-image: url("./Images/background.jpg");
@@ -85,6 +89,18 @@
   background-size:cover;
   /* filter: brightness(15%); */
   
+}
+@keyframes fadePage{
+  0%{
+    position: relative;
+    left:-100%;
+    opacity: 0;
+  }
+  100%{
+    position: relative;
+    left: 0%;
+    opacity: 1;
+  }
 }
 .input-container{
   display: flex;
@@ -143,6 +159,14 @@ input[type="text"], input[type="email"], input[type="number"],input[type="passwo
   width: 100%;
   
 }
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus, 
+input:-webkit-autofill:active{
+    -webkit-box-shadow: 0 0 0 30px var(--secondary-bg-color) inset !important;
+    -webkit-text-fill-color: wheat;
+}
+
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
   -webkit-appearance: none;

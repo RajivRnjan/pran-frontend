@@ -5,7 +5,10 @@ import avtar from '../Images/avtar.png';
 import {FaSearch} from 'react-icons/fa';
 
 function Navbar() {
-
+    
+    const gotoTopWindow =()=> {
+        window.scrollTo({top: 0, left: 0, behavior: 'smooth'});
+      }
  const [leftNav,setLeftNav]=useState()
 
 
@@ -13,8 +16,8 @@ function Navbar() {
  if(!localStorage.getItem("auth_token")){
     setLeftNav(<div className="nav-right">
     <ul className="nav-items">
-        <li><Link to ="/AboutUs">About Us</Link></li>
-        <li><Link to ="/ContactUs">Contact Us</Link></li>
+        <li onClick={gotoTopWindow}><Link to ="/AboutUs">About Us</Link></li>
+        <li onClick={gotoTopWindow}><Link to ="/ContactUs">Contact Us</Link></li>
         
         {/* <li>Sign up</li> */}
     </ul>
