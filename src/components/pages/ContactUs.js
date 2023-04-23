@@ -24,7 +24,7 @@ function ContactUs() {
                 </div><br/>
 
                 <label>Description</label><br/>
-                <textarea placeholder='Illaborate the issue.......................' name="description" rows={8} cols={52}></textarea>
+                <textarea placeholder='Illaborate the issue.......................' name="description" rows={8} ></textarea><br/>
 
                 <button className='contactUsSend'>Send</button>
             </form>

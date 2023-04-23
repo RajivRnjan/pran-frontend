@@ -2,7 +2,9 @@
 /*---########  Navbar CSS   ########---*/
 body{
   background-color: var(--primary-bg-color);
+  overflow-x: hidden;
 }
+
 #navbar a{
   text-decoration: none;
   color: white;
@@ -13,6 +15,9 @@ body{
   color: var(--secondary-text-color);
 }
 
+    
+@media screen and (max-width: 1920px) {
+  
 #navbar{
   display: flex;
   justify-content: space-between;
@@ -46,7 +51,7 @@ body{
 }
 .search{
   display: flex;
-  width: 30vw;
+ 
   padding-top:5px;
   
   background-color:var(--tertiary-bg-color); 
@@ -73,6 +78,14 @@ body{
   color:white;
   padding: 0 0.5rem;
 }
+}
+
+@media  screen and (max-width:479px) {
+  
+}
+
+
+
 
 
 
@@ -158,6 +171,7 @@ input[type="text"], input[type="email"], input[type="number"],input[type="passwo
   color:var(--tertiary-text-color);
   width: 100%;
   
+
 }
 input:-webkit-autofill,
 input:-webkit-autofill:hover, 
@@ -264,6 +278,7 @@ select{
   color:white;
   border: none;
   justify-content: center;
+  align-items: center;
   font-size: 15px;
 }
 form>.register-button, form>.login-button{
@@ -333,6 +348,26 @@ form>.register-button, form>.login-button{
     align-items: center;
   }
 
+  @media screen and (max-width: 480px) {
+  .top-container{
+    display: flex;
+    flex-direction: column;
+    
+  }
+  .signup-form,.login-form{
+    width:90vw;
+  }
+ 
+  .button{
+    display: flex;
+    justify-content: center;
+    width:100%;
+    gap:20px;
+   
+  }
+ 
+}
+
 /* ==========================
      LEFT NAVBAR
    ==========================*/
@@ -380,6 +415,7 @@ form>.register-button, form>.login-button{
 }
 /*=== Counter ===*/   
 /*=== Counter ===*/
+@media screen and (max-width:1920px){
 .counterContainer{
   background-color: var(--secondary-bg-color);
   color:white;
@@ -390,15 +426,37 @@ form>.register-button, form>.login-button{
 .Counter-row{
  
   display: flex;
+  justify-content: center;
   flex-direction: column;
   align-items: center;
   font-size: 25px;
 } 
+}
+@media screen and (max-width:790px){
+  
+  .Counter-row img{
+    width: 60px;
+  }
+  .Counter-row p{
+    text-align: center;
+     font-size: 20px;
+  }
+}
+@media screen and (max-width:470px){
+  
+  .Counter-row img{
+    width: 40px;
+  }
+  .Counter-row p{
+    text-align: center;
+     font-size: 15px;
+  }
+}
 
 
 /*=== WHY CHOOSE US ====*/
 /*=== WHY CHOOSE US ====*/
-
+@media screen and (max-width:1920px){
 .whyChooseUs{
   background-color: black;
   color:white;
@@ -420,7 +478,7 @@ form>.register-button, form>.login-button{
   border: 2px solid var(--secondary-text-color);
   margin:50px;
   padding:10px;
-  width: 350px;
+ 
   border-radius: 15px;
   transition: all 1.5s;
 }
@@ -436,9 +494,27 @@ form>.register-button, form>.login-button{
 .box>p{
   text-align: left;
 }
+}
+@media screen and (max-width:790px){
+  
+  .whyChooseUsBoxes .box{
+    margin:30px 20px;
+  }
+}
+@media screen and (max-width:470px){
+  .whyChooseUsBoxes{
+    display: flex;
+    flex-direction: column;
+   
+  }
+  .whyChooseUsBoxes .box{
+    margin:30px 40px;
+  }
+}
 
 /*Image-content-section*/
 /*Image-content-section*/
+@media screen and (max-width:1920px){
 .Image-content-section{
   display: flex;
   flex-direction: row;
@@ -475,6 +551,60 @@ form>.register-button, form>.login-button{
 }
 .descImage>img:hover{
   border-radius: 0px;
+}
+}
+
+@media screen and (max-width:790px){
+  .Image-content-section{
+    display: flex;
+    flex-direction: row;
+    padding:40px 20px;
+    justify-content:space-between;
+  }
+  .Image-desc{
+    display: flex;    
+    align-items: center;
+    text-align:left;
+    padding: 10px ;
+    font-size: 1.2rem;
+    
+  }
+  .descImage img{
+    width: 50vw; 
+     
+  }
+  .Image-content-section3{
+    display: flex;
+    padding:40px  20px;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+  }
+}
+@media screen and (max-width:490px){
+  .Image-content-section{
+    display: flex;
+    flex-direction: column;
+    padding:40px 20px;
+    justify-content:space-between;
+  }
+  .Image-desc{
+    display: flex;    
+    align-items: center;
+    text-align:left;
+    padding: 10px ;
+    font-size: 1rem;
+    
+  }
+  .descImage img{
+    width: 80vw; 
+     
+  }
+  .Image-content-section3{
+    display: flex;
+    padding:40px  20px;
+    flex-direction: column;
+    justify-content: space-between;
+  }
 }
 
 /* === Footer ===*/
@@ -559,11 +689,12 @@ form>.register-button, form>.login-button{
 /* === Contact Us === */
 /* === Contact Us === */
 /* === Contact Us === */
-.ContactUsBackgroundImg{
+@media screen and (max-width:1920px){
+/* .ContactUsBackgroundImg{
   height: 100vh;
   background-image: url('./Images/ContactUsBackgroundImg.png');
   background-size: cover;
-}
+} */
 .ContactUsTopContainer{
   width:40vw;
   
@@ -591,6 +722,9 @@ form>.register-button, form>.login-button{
 }
 .ContactUsForm{
   padding:10px 70px;
+}
+.ContactUsForm textarea{
+  width:350px;
 }
 .ContactUsForm label{
   color: var(--secondary-text-color);
@@ -623,6 +757,59 @@ form>.register-button, form>.login-button{
   
 }
 
+}
+@media screen and (max-width:1100px){
+  .ContactUs{    
+    position: relative;
+    top:50px;
+    left: 15px;
+    
+  }
+  .ContactUsTopContainer{
+    width:70vw;
+    
+  }
+  .ContactUsForm{
+    padding:10px 40px;
+  }
+  .ContactUsForm textarea{
+    width:50vw;
+  }
+  .ContactUsDesc{
+   padding: 20px;
+    position: relative;
+    top:50px;
+    left: 10px;
+    
+  }
+}
+@media screen and (max-width:490px){
+  .ContactUs{
+    
+    position: relative;
+    top:50px;
+    left: 15px;
+    
+  }
+  .ContactUsTopContainer{
+    width:90vw;
+    
+  }
+  .ContactUsForm{
+    padding:10px 40px;
+  }
+  .ContactUsForm textarea{
+    width:250px;
+  }
+  .ContactUsDesc{
+   padding: 20px;
+    position: relative;
+    top:50px;
+    left: 10px;
+    
+  }
+}
+
 /* === ABOUT US ===*/
 /* === ABOUT US ===*/
 /* === ABOUT US ===*/
@@ -649,8 +836,44 @@ form>.register-button, form>.login-button{
   font-size: 20px;
   align-items: center;
 }
+
+@media screen and (max-width:890px){
+  .vbuImg >img{
+    width:100%;
+    height: 30vh;
+    background-size: cover;
+  }
+  .AboutSection1{
+      padding: 30px;
+  }
+  .AboutSection1Logo{    
+    height: 20vh;
+  }
+  .AboutSection1Desc{   
+    font-size: 18px;
+    
+  }
+}
+@media screen and (max-width:490px){
+  .vbuImg >img{
+    width:100%;
+    height: 30vh;
+    background-size: cover;
+  }
+  .AboutSection1{
+      padding: 20px;
+  }
+  .AboutSection1Logo{    
+    height: 10vh;
+  }
+  .AboutSection1Desc{   
+    font-size: 15px;
+    
+  }
+}
 /* === Who we are === */
 /* === Who we are === */
+@media screen and (max-width:1920px){
 .WhoWeAre{
   padding:20px 100px;
   background-color: var(--secondary-bg-color);
@@ -663,10 +886,27 @@ form>.register-button, form>.login-button{
 .WhoWeAre p{
   font-size: 20px;
 }
+}
+
+
+@media screen and (max-width:490px){
+  .WhoWeAre{
+    padding:20px;
+  }
+  .WhoWeAre h2{
+    font-size: 30px;
+  }
+  .WhoWeAre p{
+    font-size: 20px;
+  }
+}
 
 
 /* === Privacy Policy === */
 /* === Privacy Policy === */
+@media screen and (max-width:1920px){
+
+
 .PrivacyPolicy,.TermsAndConditon{
   background-color: var(--primary-bg-color);
   color:var(--primary-text-color);
@@ -682,6 +922,25 @@ form>.register-button, form>.login-button{
 .PrivacyPolicyDesc>h3, .TermsAndConditionDesc>h3{
   font-size: 30px;
   margin-bottom: 0;
+}
+}
+
+@media screen and (max-width:490px){
+  .PrivacyPolicy,.TermsAndConditon{
+  
+  padding:20px;
+  
+}
+.PrivacyPolicyHeading>h2, .TermsAndConditonHeading>h2{
+  font-size: 30px;
+  text-align: center;
+  margin: 0;
+  padding: 20px;
+}
+.PrivacyPolicyDesc>h3, .TermsAndConditionDesc>h3{
+  font-size: 20px;
+  margin-bottom: 0;
+}
 }
 
 /*===Carousel===*/
@@ -775,8 +1034,21 @@ outline-offset: -6px;
 
 /* Our Story */
 /* Our Story */
+
+
 .ourStoryContainer{
   background-color: var(--primary-bg-color);
+  animation: scrollFade;
+  animation-duration: 10s;
+}
+@keyframes scrollFade{
+  0%{
+    opacity: 0;
+  }
+  100%{
+    opacity: 1;
+  }
+  
 }
 .ourStory{
   display: flex;
@@ -794,4 +1066,29 @@ outline-offset: -6px;
   font-size: 20px;
   
   color: var(--primary-text-color);
+}
+
+@media screen and (max-width:890px){
+  .ourStoryHeading h2{
+    text-align: center;
+    font-size: 38px;
+    
+ }
+ .ourStoryDesc{
+   padding:0 50px 50px 50px;
+   font-size: 25px;
+ 
+ }
+}
+@media screen and (max-width:490px){
+  .ourStoryHeading h2{
+    text-align: center;
+    font-size: 35px;
+    
+ }
+ .ourStoryDesc{
+   padding:0 20px 20px 20px;
+   font-size: 20px;
+ 
+ }
 }

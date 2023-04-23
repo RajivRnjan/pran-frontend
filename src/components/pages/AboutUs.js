@@ -4,9 +4,13 @@ import logo from '../../Images/logo.svg';
 import CounterSection from './CounterSection';
 import Crousel from '../Crousel';
 import DeveloperCrousel from '../DeveloperCrousel';
+
+
+
 function AboutUs() {
   return (
     <>
+    
     <div className="vbuImg">
       <img src={vbuImg} alt='vbuImg' />
     </div>
@@ -21,8 +25,10 @@ function AboutUs() {
       </div>
 
     </div>
+
     {/* WHO WE ARE START */}
     {/* WHO WE ARE START*/}
+    
     <div className="WhoWeAre">
       <h2>WHO WE ARE</h2>
       <p>PRAN an app for all types of study related requirements in Vinoba Bhave University (VBU) for the students of VBU.<br/>
@@ -33,6 +39,8 @@ function AboutUs() {
 
       <p>It is like an open library for the students where they can search and solve their query or confusion regarding notes and important Notice related to VBU.</p>
     </div>
+
+   
     {/* WHO WE ARE End */}
     {/* WHO WE ARE End*/}
 
@@ -72,6 +80,7 @@ function AboutUs() {
    {/* SpeicalThanksTo End */}
 
    <Crousel/>
+  
     </>
   )
 }
