@@ -1,5 +1,5 @@
 import React from "react";
-import CounterSection from "./CounterSection";
+import CounterSection from "../CounterSection";
 
 import notesImg from "../../Images/notes.png";
 import pyqImg from "../../Images/pyq.png";

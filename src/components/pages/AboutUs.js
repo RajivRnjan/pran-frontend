@@ -1,7 +1,7 @@
 import React from "react";
 import vbuImg from "../../Images/vbuImg.png";
 import logo from "../../Images/logo.svg";
-import CounterSection from "./CounterSection";
+import CounterSection from "../CounterSection";
 import Crousel from "../Crousel";
 import DeveloperCrousel from "../DeveloperCrousel";
 
@@ -75,6 +75,27 @@ function AboutUs() {
         </div>
       </div>
       {/* Our Story End*/}
+
+      {/* Our Vision Start*/}
+      <div className="ourVisionContainer">
+        <div className="ourVision">
+          <div className="ourVisionHeading">
+            <h2>Our Vision</h2>
+          </div>
+
+          <div className="ourVisionDesc">
+            <p>
+              The idea of PRAN came to the light when we faced difficulties
+              finding proper notes of respective subjects and PYQs of those
+              subjects. We are thinking of resolving this issue then our Founder
+              Navin came with the solution and that’s how PRAN was born. It is
+              almost 1.5 years we are runing this website and happend to be in
+              all the colleges associated with Vinoba Bhave University.
+            </p>
+          </div>
+        </div>
+      </div>
+      {/* Our Vision End*/}
 
       {/* Where WE ARE start*/}
       {/* Where WE ARE End*/}

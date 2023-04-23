@@ -25,7 +25,7 @@ function Footer() {
           <div className="middleTopFooter">
             <div className="middleTopLeftItem">
               <ul>
-                <li>Home</li>
+                <Link to="/"><li onClick={gotoTopWindow}>Home</li></Link>
                 <li>Notes</li>
                 <li>Menu</li>
                 <li>About Us</li>

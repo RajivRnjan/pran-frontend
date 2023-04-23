@@ -9,7 +9,7 @@ import ContactUs from "./components/pages/ContactUs";
 import AboutUs from "./components/pages/AboutUs";
 import PrivacyPolicy from "./components/pages/PrivacyPolicy";
 import Terms from "./components/pages/Terms";
-import ErrorPage from "./components/ErrorPage";
+import ErrorPage from "./components/pages/ErrorPage"
 
 function App() {
   return (
