@@ -3,8 +3,12 @@ import { Link } from "react-router-dom";
 import logo from "../Images/logo.svg";
 import avtar from "../Images/avtar.png";
 import { FaSearch } from "react-icons/fa";
+import { GoThreeBars } from "react-icons/go";
+import { RxCross2 } from "react-icons/rx";
 
 function Navbar() {
+  const [isActive, setIsActive] = useState(true);
+
   const gotoTopWindow = () => {
     window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
   };
@@ -94,6 +98,25 @@ function Navbar() {
       </div>
 
       {leftNav}
+      
+      <div className="mobile-menu">
+          {isActive ? (
+            <GoThreeBars size="28px"
+              onClick={() => {
+                document.querySelector(".nav").style.right="0%";
+                setIsActive(!isActive);
+              }}
+            />
+          ) : (
+            <RxCross2 size="28px"
+              onClick={() => {
+                document.querySelector(".nav").style.right="-100%";
+                setIsActive(!isActive);
+              }}
+            />
+          )}
+
+        </div>
     </div>
   );
 }
