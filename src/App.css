@@ -667,9 +667,7 @@ form > .login-button {
     background-color: var(--primary-text-color);
     color: var(--primary-bg-color);
     border-radius: 70px 25px;
-    position: relative;
-    top: 50px;
-    left: 70px;
+    margin: 30px 50px;
   }
   .ContactUsHeading {
     font-size: 25px;
@@ -688,9 +686,10 @@ form > .login-button {
   }
   .ContactUsDesc {
     color: var(--primary-text-color);
-    position: relative;
+    /* position: relative;
     top: 100px;
-    left: 30px;
+    left: 30px; */
+    margin: 30px 50px;
   }
   .ContactUsDesc > h4 {
     margin: 0;
@@ -728,9 +727,9 @@ form > .login-button {
   }
   .ContactUsDesc {
     padding: 20px;
-    position: relative;
+    /* position: relative;
     top: 50px;
-    left: 10px;
+    left: 10px; */
   }
 }
 @media screen and (max-width: 490px) {
