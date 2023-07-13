@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import logo from "../Images/logo.svg";
 import avtar from "../Images/avtar.png";
 import { FaSearch } from "react-icons/fa";
-import { GoThreeBars } from "react-icons/go";
+// import { GoThreeBars } from "react-icons/go";
 import { RxCross2 } from "react-icons/rx";
 
 function Navbar() {
@@ -99,7 +99,7 @@ function Navbar() {
 
       {leftNav}
       
-      <div className="mobile-menu">
+      {/* <div className="mobile-menu">
           {isActive ? (
             <GoThreeBars size="28px"
               onClick={() => {
@@ -116,7 +116,7 @@ function Navbar() {
             />
           )}
 
-        </div>
+        </div> */}
     </div>
   );
 }
