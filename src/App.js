@@ -1,5 +1,5 @@
 import "./App.css";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { HashRouter, Routes, Route } from "react-router-dom";
 import Navbar from './components/Navbar';
 import Signup from "./components/pages/Signup";
 import Login from "./components/pages/Login";
@@ -14,7 +14,7 @@ import ErrorPage from "./components/pages/ErrorPage"
 function App() {
   return (
     <>
-      <BrowserRouter>
+      <HashRouter>
         {/* <Navbar/> */}
         <Routes>
           <Route exact path="/" element={<Login />} />
@@ -28,7 +28,7 @@ function App() {
           <Route exact path="*" element={<ErrorPage />} />
         </Routes>
         <Footer />
-      </BrowserRouter>
+      </HashRouter>
     </>
   );
 }
