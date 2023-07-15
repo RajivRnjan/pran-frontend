@@ -12,8 +12,12 @@ body {
 #navbar a:hover {
   color: var(--secondary-text-color);
 }
-
+/* ---######## Desktop CSS START ########---*/
+/* ---######## Desktop CSS START ########---*/
+/* ---######## Desktop CSS START ########---*/
+/* ---######## Desktop CSS START ########---*/
 @media screen and (max-width: 1920px) {
+  /* Navbar Start */
   #navbar {
     display: flex;
     justify-content: space-between;
@@ -69,336 +73,324 @@ body {
     color: white;
     padding: 0 0.5rem;
   }
-}
+  /* === Navbar End ===  */
 
-@media screen and (max-width: 479px) {
-}
+  /* === Signup CSS === */
+  .background-img {
+    width: 100vw;
+    animation: fadePage;
+    animation-duration: 1s;
+    /* height:100vh; */
 
-/* Signup CSS */
-.background-img {
-  width: 100vw;
-  animation: fadePage;
-  animation-duration: 1s;
-  /* height:100vh; */
-
-  background-image: url("./Images/background.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
-  /* filter: brightness(15%); */
-}
-@keyframes fadePage {
-  0% {
-    position: relative;
-    left: -100%;
-    opacity: 0;
+    background-image: url("./Images/background.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* filter: brightness(15%); */
   }
-  100% {
-    position: relative;
-    left: 0%;
-    opacity: 1;
+  @keyframes fadePage {
+    0% {
+      position: relative;
+      left: -100%;
+      opacity: 0;
+    }
+    100% {
+      position: relative;
+      left: 0%;
+      opacity: 1;
+    }
   }
-}
-.input-container {
-  display: flex;
-  flex-direction: row;
-  border-bottom: 1px solid var(--secondary-text-color);
-  justify-content: center;
-  align-items: center;
-  margin: 5px 0;
-}
-.top-container {
-  display: flex;
-  justify-content: center;
-  width: 100%;
-}
-.signup-container,
-.login-container {
-  display: flex;
-  flex: 0.7;
-  justify-content: center;
-  margin: 25px 0;
-  opacity: 10;
-}
-
-.signup-form,
-.login-form {
-  display: flex;
-  flex-direction: column;
-  padding: 15px 0;
-  width: 50%;
-  /* height:80vh; */
-  background-color: var(--secondary-bg-color);
-
-  border-radius: 20px;
-  text-align: center;
-}
-
-.signup-form > h2,
-.login-form > h2 {
-  font-size: 2.5rem;
-  color: var(--primary-color);
-  padding: 40px 0 20px 0;
-  margin: 0;
-}
-.signup-form > form,
-.login-form > form {
-  display: flex;
-  flex-direction: column;
-  padding: 0 30px;
-}
-input[type="text"],
-input[type="email"],
-input[type="number"],
-input[type="password"] {
-  padding: 10px;
-  text-decoration: none;
-  border: none;
-  background-color: transparent;
-  outline: none;
-  color: var(--tertiary-text-color);
-  width: 100%;
-}
-input:-webkit-autofill,
-input:-webkit-autofill:hover,
-input:-webkit-autofill:focus,
-input:-webkit-autofill:active {
-  -webkit-box-shadow: 0 0 0 30px var(--secondary-bg-color) inset !important;
-  -webkit-text-fill-color: wheat;
-}
-
-input::-webkit-outer-spin-button,
-input::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
-}
-
-/* Firefox */
-input[type="number"] {
-  -moz-appearance: textfield;
-}
-hr {
-  border: 1px solid #2b2828;
-  width: 100%;
-}
-
-.selectElement {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  color: var(--secondary-text-color);
-}
-.select-college {
-  display: flex;
-  width: 100%;
-  padding: 15px 0 2px 0;
-}
-.clg {
-  /* margin-left: 15px; */
-  width: 100%;
-  padding: 0 9px;
-}
-.course-sem {
-  display: flex;
-  flex-direction: row;
-  width: 100%;
-}
-.select-courses {
-  display: flex;
-  width: 100%;
-  padding: 15px 0 2px 0;
-}
-.select-semester {
-  display: flex;
-  width: 100%;
-  padding: 15px 0 2px 0;
-  margin-left: 5px;
-}
-select {
-  border: none;
-  outline: none;
-  width: 90%;
-  background-color: transparent;
-  color: var(--secondary-text-color);
-}
-
-.checkbox {
-  display: flex;
-  color: var(--secondary-text-color);
-  padding: 8px 0;
-  font-size: 12px;
-}
-.checkbox-icon {
-  color: var(--primary-color);
-  padding: 0 2px;
-  font-size: 15px;
-}
-
-.signup-desc,
-.login-desc {
-  padding: 50px;
-  display: flex;
-  flex: 0.3;
-  color: white;
-  flex-direction: column;
-  justify-content: center;
-  text-align: center;
-}
-
-.register-btn,
-.login-btn,
-.get-started,
-.sign-in,
-.sign-up {
-  cursor: pointer;
-  width: 50%;
-  border-radius: 5px;
-
-  padding: 13px 20px;
-  display: flex;
-  background-color: var(--primary-color);
-  color: white;
-  border: none;
-  justify-content: center;
-  align-items: center;
-  font-size: 15px;
-}
-form > .register-button,
-form > .login-button {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.signup-footer,
-.login-footer {
-  color: var(--tertiary-text-color);
-}
-.signup-footer > a,
-.login-footer > a {
-  color: var(--primary-color);
-  text-decoration: none;
-}
-
-.signup-desc > h2 {
-  width: 50px;
-  font-size: 40px;
-}
-.signup-desc > p {
-  width: 50px;
-  font-size: 30px;
-}
-.button {
-  display: flex;
-  justify-content: center;
-  width: 80%;
-  gap: 20px;
-}
-.button > .sign-in,
-.button > .sign-up {
-  background-color: transparent;
-  border: 2px solid var(--primary-color);
-  transition: all 1s;
-}
-.button > .sign-in:hover,
-.button > .sign-up:hover {
-  background-color: var(--primary-color);
-  color: white;
-}
-.button > .get-started {
-  /* margin-right:20px; */
-  border: 2px solid var(--primary-color);
-}
-
-/* ==========================
-     LOGIN PAGE
-   ==========================*/
-
-.login-form > form > .forgot-password {
-  display: flex;
-  justify-content: flex-end;
-  color: var(--primary-color);
-  text-decoration: none;
-  font-size: 13px;
-  margin: 0;
-}
-.login-desc {
-  padding: 50px;
-  display: flex;
-  flex: 0.3;
-  color: white;
-  flex-direction: column;
-  justify-content: center;
-  text-align: center;
-  align-items: center;
-}
-
-@media screen and (max-width: 480px) {
-  .top-container {
+  .input-container {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    border-bottom: 1px solid var(--secondary-text-color);
+    justify-content: center;
+    align-items: center;
+    margin: 5px 0;
   }
-  .signup-form,
-  .login-form {
-    width: 90vw;
-  }
-
-  .button {
+  .top-container {
     display: flex;
     justify-content: center;
     width: 100%;
+  }
+  .signup-container,
+  .login-container {
+    display: flex;
+    flex: 0.7;
+    justify-content: center;
+    margin: 25px 0;
+    opacity: 10;
+  }
+
+  .signup-form,
+  .login-form {
+    display: flex;
+    flex-direction: column;
+    padding: 15px 0;
+    width: 50%;
+    /* height:80vh; */
+    background-color: var(--secondary-bg-color);
+
+    border-radius: 20px;
+    text-align: center;
+  }
+
+  .signup-form > h2,
+  .login-form > h2 {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    padding: 40px 0 20px 0;
+    margin: 0;
+  }
+  .signup-form > form,
+  .login-form > form {
+    display: flex;
+    flex-direction: column;
+    padding: 0 30px;
+  }
+  input[type="text"],
+  input[type="email"],
+  input[type="number"],
+  input[type="password"] {
+    padding: 10px;
+    text-decoration: none;
+    border: none;
+    background-color: transparent;
+    outline: none;
+    color: var(--tertiary-text-color);
+    width: 100%;
+  }
+  input:-webkit-autofill,
+  input:-webkit-autofill:hover,
+  input:-webkit-autofill:focus,
+  input:-webkit-autofill:active {
+    -webkit-box-shadow: 0 0 0 30px var(--secondary-bg-color) inset !important;
+    -webkit-text-fill-color: wheat;
+  }
+
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  /* Firefox
+  input[type="number"] {
+  -moz-appearance: textfield;
+} */
+  hr {
+    border: 1px solid #2b2828;
+    width: 100%;
+  }
+
+  .selectElement {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    color: var(--secondary-text-color);
+  }
+  .select-college {
+    display: flex;
+    width: 100%;
+    padding: 15px 0 2px 0;
+  }
+  .clg {
+    /* margin-left: 15px; */
+    width: 100%;
+    padding: 0 9px;
+  }
+  .course-sem {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+  }
+  .select-courses {
+    display: flex;
+    width: 100%;
+    padding: 15px 0 2px 0;
+  }
+  .select-semester {
+    display: flex;
+    width: 100%;
+    padding: 15px 0 2px 0;
+    margin-left: 5px;
+  }
+  select {
+    border: none;
+    outline: none;
+    width: 90%;
+    background-color: transparent;
+    color: var(--secondary-text-color);
+  }
+
+  .checkbox {
+    display: flex;
+    color: var(--secondary-text-color);
+    padding: 8px 0;
+    font-size: 12px;
+  }
+  .checkbox-icon {
+    color: var(--primary-color);
+    padding: 0 2px;
+    font-size: 15px;
+  }
+
+  .signup-desc,
+  .login-desc {
+    padding: 50px;
+    display: flex;
+    flex: 0.3;
+    color: white;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .register-btn,
+  .login-btn,
+  .get-started,
+  .sign-in,
+  .sign-up {
+    cursor: pointer;
+    width: 50%;
+    border-radius: 5px;
+
+    padding: 13px 20px;
+    display: flex;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    justify-content: center;
+    align-items: center;
+    font-size: 15px;
+  }
+  form > .register-button,
+  form > .login-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .signup-footer,
+  .login-footer {
+    color: var(--tertiary-text-color);
+  }
+  .signup-footer > a,
+  .login-footer > a {
+    color: var(--primary-color);
+    text-decoration: none;
+  }
+
+  .signup-desc > h2 {
+    width: 50px;
+    font-size: 40px;
+  }
+  .signup-desc > p {
+    width: 50px;
+    font-size: 30px;
+  }
+  .button {
+    display: flex;
+    justify-content: center;
+    width: 80%;
     gap: 20px;
   }
-}
+  .button > .sign-in,
+  .button > .sign-up {
+    background-color: transparent;
+    border: 2px solid var(--primary-color);
+    transition: all 1s;
+  }
+  .button > .sign-in:hover,
+  .button > .sign-up:hover {
+    background-color: var(--primary-color);
+    color: white;
+  }
+  .button > .get-started {
+    /* margin-right:20px; */
+    border: 2px solid var(--primary-color);
+  }
+  /* === Signup Css End ===  */
 
-/* ==========================
-     LEFT NAVBAR
+  /* ==========================
+     LOGIN PAGE START
    ==========================*/
 
-.leftNavbarContainer > ul {
-  margin: 0;
-  height: 89vh;
-  padding: 0;
-  list-style: none;
-}
-.leftNavbar {
-  background-color: var(--tertiary-bg-color);
-  width: fit-content;
-  color: white;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-.leftNavbar > .upperSection > .leftNavbarItem > li {
-  padding: 18px 10px;
-  width: fit-content;
-}
+  .login-form > form > .forgot-password {
+    display: flex;
+    justify-content: flex-end;
+    color: var(--primary-color);
+    text-decoration: none;
+    font-size: 13px;
+    margin: 0;
+  }
+  .login-desc {
+    padding: 50px;
+    display: flex;
+    flex: 0.3;
+    color: white;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+  }
+  /* ==========================
+     LOGIN PAGE END
+   ==========================*/
 
-.leftNavbar > .lowerSection > .leftNavbarItem > li {
-  padding: 18px 10px;
-  width: fit-content;
-}
+  /* ==========================
+     LEFT NAVBAR START
+   ==========================*/
 
-.leftNavbarItem {
-  display: flex;
-  flex-direction: row;
-  transition: all 0.3s;
-  align-items: center;
-  padding: 0px 10px;
-}
+  .leftNavbarContainer > ul {
+    margin: 0;
+    height: 89vh;
+    padding: 0;
+    list-style: none;
+  }
+  .leftNavbar {
+    background-color: var(--tertiary-bg-color);
+    width: fit-content;
+    color: white;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .leftNavbar > .upperSection > .leftNavbarItem > li {
+    padding: 18px 10px;
+    width: fit-content;
+  }
 
-.leftNavbarItem:hover {
-  background-color: var(--primary-color);
-  color: white;
-}
-/*=== Counter ===*/
-/*=== Counter ===*/
-@media screen and (max-width: 1920px) {
+  .leftNavbar > .lowerSection > .leftNavbarItem > li {
+    padding: 18px 10px;
+    width: fit-content;
+  }
+
+  .leftNavbarItem {
+    display: flex;
+    flex-direction: row;
+    transition: all 0.3s;
+    align-items: center;
+    padding: 0px 10px;
+  }
+
+  .leftNavbarItem:hover {
+    background-color: var(--primary-color);
+    color: white;
+  }
+  /* ==========================
+     LEFT NAVBAR END
+   ==========================*/
+
+  /* ==========================
+      COUNTER START
+   ==========================*/
   .counterContainer {
     background-color: var(--secondary-bg-color);
     color: white;
     display: flex;
     justify-content: space-around;
     padding: 30px 20px 20px 20px;
+    gap:10px;
   }
   .Counter-row {
     display: flex;
@@ -407,31 +399,14 @@ form > .login-button {
     align-items: center;
     font-size: 25px;
   }
-}
+  /* ==========================
+      COUNTER END
+   ==========================*/
 
-@media screen and (max-width: 790px) {
-  .Counter-row img {
-    width: 60px;
-  }
-  .Counter-row p {
-    text-align: center;
-    font-size: 20px;
-  }
-}
+  /* ==========================
+      WHY CHOOSE US START
+   ==========================*/
 
-@media screen and (max-width: 470px) {
-  .Counter-row img {
-    width: 40px;
-  }
-  .Counter-row p {
-    text-align: center;
-    font-size: 15px;
-  }
-}
-
-/*=== WHY CHOOSE US ====*/
-/*=== WHY CHOOSE US ====*/
-@media screen and (max-width: 1920px) {
   .whyChooseUs {
     background-color: black;
     color: white;
@@ -445,12 +420,13 @@ form > .login-button {
   }
   .whyChooseUsBoxes {
     display: flex;
+    
   }
   .whyChooseUsBoxes .box {
     border: 2px solid var(--secondary-text-color);
     margin: 50px;
-    padding: 10px;
-
+    padding: 25px 10px 10px 10px;
+    width: calc(100%/3);
     border-radius: 15px;
     transition: all 1.5s;
   }
@@ -464,25 +440,13 @@ form > .login-button {
   .box > p {
     text-align: left;
   }
-}
-@media screen and (max-width: 790px) {
-  .whyChooseUsBoxes .box {
-    margin: 30px 20px;
-  }
-}
-@media screen and (max-width: 470px) {
-  .whyChooseUsBoxes {
-    display: flex;
-    flex-direction: column;
-  }
-  .whyChooseUsBoxes .box {
-    margin: 30px 40px;
-  }
-}
+  /* ==========================
+      WHY CHOOSE US END
+   ==========================*/
 
-/*Image-content-section*/
-/*Image-content-section*/
-@media screen and (max-width: 1920px) {
+  /* ==========================
+      IMAGE CONTENT SECTION START
+   ==========================*/
   .Image-content-section {
     display: flex;
     flex-direction: row;
@@ -517,138 +481,94 @@ form > .login-button {
   .descImage > img:hover {
     border-radius: 0px;
   }
-}
+  /* ==========================
+      IMAGE CONTENT SECTION END
+   ==========================*/
 
-@media screen and (max-width: 790px) {
-  .Image-content-section {
+  /* ==========================
+      FOOTER START
+   ==========================*/
+  .footerContainer a {
+    color: var(--primary-text-color);
+    text-decoration: none;
+    transition: all 1s;
+  }
+  .footerContainer a:hover {
+    color: var(--secondary-text-color);
+  }
+  .footerContainer {
+    background-color: var(--footer-color);
+    color: white;
     display: flex;
     flex-direction: row;
-    padding: 40px 20px;
     justify-content: space-between;
+    padding: 15px 50px;
   }
-  .Image-desc {
-    display: flex;
-    align-items: center;
-    text-align: left;
-    padding: 10px;
-    font-size: 1.2rem;
-  }
-  .descImage img {
-    width: 50vw;
-  }
-  .Image-content-section3 {
-    display: flex;
-    padding: 40px 20px;
-    flex-direction: row-reverse;
-    justify-content: space-between;
-  }
-}
-@media screen and (max-width: 490px) {
-  .Image-content-section {
+
+  .leftFooter {
     display: flex;
     flex-direction: column;
-    padding: 40px 20px;
-    justify-content: space-between;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding-top: 10px;
   }
-  .Image-desc {
+  .footerEmail {
     display: flex;
     align-items: center;
-    text-align: left;
-    padding: 10px;
-    font-size: 1rem;
+    justify-content: center;
+    gap: 6px;
+    margin-left: 8px;
   }
-  .descImage img {
-    width: 80vw;
-  }
-  .Image-content-section3 {
+  .middleFooter {
     display: flex;
-    padding: 40px 20px;
     flex-direction: column;
     justify-content: space-between;
   }
-}
+  .middleTopFooter {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+  .middleTopFooter {
+    display: flex;
+    gap: 40px;
+  }
+  .middleTopLeftItem > ul,
+  .middleTopMiddleItem > ul,
+  .middleTopRightItem > ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+  .BottomFooter {
+    background-color: var(--primary-bg-color);
+    color: white;
+    text-align: center;
+    text-align: center;
+    /* font-size: 12px; */
+    padding: 15px 0;
+  }
+  .BottomFooter p {
+    margin: 0;
+    font-size: 12px;
+  }
 
-/* === Footer ===*/
-/* === Footer ===*/
-.footerContainer a {
-  color: var(--primary-text-color);
-  text-decoration: none;
-  transition: all 1s;
-}
-.footerContainer a:hover {
-  color: var(--secondary-text-color);
-}
-.footerContainer {
-  background-color: var(--footer-color);
-  color: white;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  padding: 15px 50px;
-}
+  .rightFooter {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
+  }
+  .rightFooter img {
+    width: 60%;
+  }
+  /* ==========================
+      FOOTER END
+   ==========================*/
 
-.leftFooter {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: flex-start;
-  padding-top: 10px;
-}
-.footerEmail {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 6px;
-  margin-left: 8px;
-}
-.middleFooter {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-.middleTopFooter {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-}
-.middleTopFooter {
-  display: flex;
-  gap: 40px;
-}
-.middleTopLeftItem > ul,
-.middleTopMiddleItem > ul,
-.middleTopRightItem > ul {
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-  gap: 5px;
-}
-.BottomFooter {
-  background-color: var(--primary-bg-color);
-  color: white;
-  text-align: center;
-  text-align: center;
-  /* font-size: 12px; */
-  padding: 15px 0;
-}
-.BottomFooter p {
-  margin: 0;
-  font-size: 12px;
-}
-
-.rightFooter {
-  display: flex;
-  justify-content: flex-end;
-  align-items: flex-start;
-}
-.rightFooter img {
-  width: 60%;
-}
-
-/* === Contact Us === */
-/* === Contact Us === */
-/* === Contact Us === */
-@media screen and (max-width: 1920px) {
+  /* ==========================
+      CONTACT US START
+   ==========================*/
   /* .ContactUsBackgroundImg{
   height: 100vh;
   background-image: url('./Images/ContactUsBackgroundImg.png');
@@ -709,114 +629,43 @@ form > .login-button {
   .contactUsSend:hover {
     background-color: var(--primary-color);
   }
-}
-@media screen and (max-width: 1100px) {
-  .ContactUs {
-    position: relative;
-    top: 50px;
-    left: 15px;
-  }
-  .ContactUsTopContainer {
-    width: 70vw;
-  }
-  .ContactUsForm {
-    padding: 10px 40px;
-  }
-  .ContactUsForm textarea {
-    width: 50vw;
-  }
-  .ContactUsDesc {
-    padding: 20px;
-    /* position: relative;
-    top: 50px;
-    left: 10px; */
-  }
-}
-@media screen and (max-width: 490px) {
-  .ContactUs {
-    position: relative;
-    top: 50px;
-    left: 15px;
-  }
-  .ContactUsTopContainer {
-    width: 90vw;
-  }
-  .ContactUsForm {
-    padding: 10px 40px;
-  }
-  .ContactUsForm textarea {
-    width: 250px;
-  }
-  .ContactUsDesc {
-    padding: 20px;
-    position: relative;
-    top: 50px;
-    left: 10px;
-  }
-}
+  /* ==========================
+      CONTACT US END
+   ==========================*/
 
-/* === ABOUT US ===*/
-/* === ABOUT US ===*/
-/* === ABOUT US ===*/
-.vbuImg > img {
-  width: 100%;
-  height: 60vh;
-  background-size: cover;
-}
-.AboutSection1 {
-  background-color: var(--primary-bg-color);
-  display: flex;
-  justify-content: space-around;
-  padding: 20px 150px 20px 80px;
-}
-.AboutSection1Logo {
-  display: flex;
-  flex: 0.2;
-  height: 25vh;
-}
-.AboutSection1Desc {
-  display: flex;
-  flex: 0.8;
-  color: var(--primary-text-color);
-  font-size: 20px;
-  align-items: center;
-}
-
-@media screen and (max-width: 890px) {
+  /* ==========================
+      ABOUT US
+   ==========================*/
   .vbuImg > img {
     width: 100%;
-    height: 30vh;
+    height: 60vh;
     background-size: cover;
   }
   .AboutSection1 {
-    padding: 30px;
+    background-color: var(--primary-bg-color);
+    display: flex;
+    justify-content: space-around;
+    padding: 20px 150px 20px 80px;
   }
   .AboutSection1Logo {
-    height: 20vh;
+    display: flex;
+    flex: 0.2;
+    height: 25vh;
   }
   .AboutSection1Desc {
-    font-size: 18px;
+    display: flex;
+    flex: 0.8;
+    color: var(--primary-text-color);
+    font-size: 20px;
+    align-items: center;
   }
-}
-@media screen and (max-width: 490px) {
-  .vbuImg > img {
-    width: 100%;
-    height: 30vh;
-    background-size: cover;
-  }
-  .AboutSection1 {
-    padding: 20px;
-  }
-  .AboutSection1Logo {
-    height: 10vh;
-  }
-  .AboutSection1Desc {
-    font-size: 15px;
-  }
-}
-/* === Who we are === */
-/* === Who we are === */
-@media screen and (max-width: 1920px) {
+  /* ==========================
+      ABOUT US END
+   ==========================*/
+
+  /* ==========================
+      WHO WE ARE START
+   ==========================*/
   .WhoWeAre {
     padding: 20px 100px;
     background-color: var(--secondary-bg-color);
@@ -829,23 +678,13 @@ form > .login-button {
   .WhoWeAre p {
     font-size: 20px;
   }
-}
+  /* ==========================
+      WHO WE ARE END
+   ==========================*/
 
-@media screen and (max-width: 490px) {
-  .WhoWeAre {
-    padding: 20px;
-  }
-  .WhoWeAre h2 {
-    font-size: 30px;
-  }
-  .WhoWeAre p {
-    font-size: 20px;
-  }
-}
-
-/* === Privacy Policy === */
-/* === Privacy Policy === */
-@media screen and (max-width: 1920px) {
+  /* ==========================
+      PRIVACY POLICY START
+   ==========================*/
   .PrivacyPolicy,
   .TermsAndConditon {
     background-color: var(--primary-bg-color);
@@ -864,174 +703,140 @@ form > .login-button {
     font-size: 30px;
     margin-bottom: 0;
   }
-}
+  /* ==========================
+      PRIVACY POLICY END
+   ==========================*/
 
-@media screen and (max-width: 490px) {
-  .PrivacyPolicy,
-  .TermsAndConditon {
-    padding: 20px;
+  /* ==========================
+      DEVELOPER CROUSEL START
+   ==========================*/
+  .CrouselContainer,
+  .DeveloperCrouselContainer {
+    padding: 30px;
+    background-color: var(--primary-bg-color);
   }
-  .PrivacyPolicyHeading > h2,
-  .TermsAndConditonHeading > h2 {
-    font-size: 30px;
+  .CrouselHeading,
+  .DeveloperCrouselHeading {
+    color: var(--primary-text-color);
     text-align: center;
-    margin: 0;
     padding: 20px;
-  }
-  .PrivacyPolicyDesc > h3,
-  .TermsAndConditionDesc > h3 {
-    font-size: 20px;
-    margin-bottom: 0;
-  }
-}
-
-/*===Carousel===*/
-/*===Carousel===*/
-/*===Carousel===*/
-.CrouselContainer,
-.DeveloperCrouselContainer {
-  padding: 30px;
-  background-color: var(--primary-bg-color);
-}
-.CrouselHeading,
-.DeveloperCrouselHeading {
-  color: var(--primary-text-color);
-  text-align: center;
-  padding: 20px;
-  font-size: 25px;
-  margin: 0;
-}
-.card {
-  background-image: linear-gradient(#00526c, black);
-  padding: 20px;
-  margin: 10px;
-  border-radius: 10px;
-  height: 180px;
-}
-.card-header {
-  display: flex;
-}
-.card-header h2 {
-  color: var(--primary-text-color);
-  /* font-size: 30px; */
-  padding-left: 20px;
-}
-.card p {
-  color: var(--primary-text-color);
-}
-.card-header img {
-  border-radius: 50%;
-  width: 70px;
-  border: 3px solid var(--secondary-color);
-  /* height: 35px; */
-}
-
-/*Developer Crousel*/
-/*Developer Crousel*/
-/*Developer Crousel*/
-.DeveloperCard {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  background: linear-gradient(180deg, #165793 0%, rgba(0, 133, 255, 0) 73.1%);
-  margin: 50px;
-}
-.DeveloperCrouselHeading h1 {
-  margin: 0;
-}
-.DeveloperCard-header {
-  padding: 30px;
-}
-.DeveloperCard-header img {
-  border-radius: 50%;
-  border: 6px solid var(--primary-text-color);
-  /* box-shadow: inset 0px 0px 0px 12px orange;
-   */
-  outline: solid 2px black;
-  outline-offset: -6px;
-}
-.DeveloperCard-Footer {
-  display: flex;
-  flex-direction: column;
-  background-color: black;
-  color: var(--primary-text-color);
-  width: 100%;
-  text-align: center;
-}
-
-.DeveloperCard-Footer h2 {
-  margin: 5px 0 0 0;
-}
-.DeveloperCard-Footer p {
-  margin: 5px 0 10px 0;
-}
-
-/* Our Story and Vision */
-/* Our Story and Vision */
-
-.ourStoryContainer,
-.ourVisionContainer {
-  background-color: var(--primary-bg-color);
-  animation: scrollFade;
-  animation-duration: 10s;
-}
-@keyframes scrollFade {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-.ourStory,
-.ourVision {
-  display: flex;
-  flex-direction: column;
-  background-color: #21293eaa;
-  border-radius: 10px;
-}
-.ourStoryHeading h2,
-.ourVisionHeading h2 {
-  text-align: center;
-  font-size: 40px;
-  color: var(--primary-text-color);
-}
-.ourStoryDesc,
-.ourVisionDesc {
-  padding: 0px 150px 10px 150px;
-  font-size: 20px;
-
-  color: var(--primary-text-color);
-}
-
-@media screen and (max-width: 890px) {
-  .ourStoryHeading h2,
-  .ourVisionHeading h2 {
-    text-align: center;
-    font-size: 38px;
-  }
-  .ourStoryDesc,
-  .ourVisionDesc {
-    padding: 0 50px 50px 50px;
     font-size: 25px;
+    margin: 0;
   }
-}
-@media screen and (max-width: 490px) {
+  .card {
+    background-image: linear-gradient(#00526c, black);
+    padding: 20px;
+    margin: 10px;
+    border-radius: 10px;
+    height: 180px;
+  }
+  .card-header {
+    display: flex;
+  }
+  .card-header h2 {
+    color: var(--primary-text-color);
+    /* font-size: 30px; */
+    padding-left: 20px;
+  }
+  .card p {
+    color: var(--primary-text-color);
+  }
+  .card-header img {
+    border-radius: 50%;
+    width: 70px;
+    border: 3px solid var(--secondary-color);
+    /* height: 35px; */
+  }
+
+  /*Developer Crousel*/
+  /*Developer Crousel*/
+  /*Developer Crousel*/
+  .DeveloperCard {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(180deg, #165793 0%, rgba(0, 133, 255, 0) 73.1%);
+    margin: 50px;
+  }
+  .DeveloperCrouselHeading h1 {
+    margin: 0;
+  }
+  .DeveloperCard-header {
+    padding: 30px;
+  }
+  .DeveloperCard-header img {
+    border-radius: 50%;
+    border: 6px solid var(--primary-text-color);
+    /* box-shadow: inset 0px 0px 0px 12px orange;
+   */
+    outline: solid 2px black;
+    outline-offset: -6px;
+  }
+  .DeveloperCard-Footer {
+    display: flex;
+    flex-direction: column;
+    background-color: black;
+    color: var(--primary-text-color);
+    width: 100%;
+    text-align: center;
+  }
+
+  .DeveloperCard-Footer h2 {
+    margin: 5px 0 0 0;
+  }
+  .DeveloperCard-Footer p {
+    margin: 5px 0 10px 0;
+  }
+  /* ==========================
+      DEVELOPER CROUSEL END
+   ==========================*/
+
+  /* ==========================
+      OUR STORY AND VISION START
+   ==========================*/
+  .ourStoryContainer,
+  .ourVisionContainer {
+    background-color: var(--primary-bg-color);
+    animation: scrollFade;
+    animation-duration: 10s;
+  }
+  @keyframes scrollFade {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  .ourStory,
+  .ourVision {
+    display: flex;
+    flex-direction: column;
+    background-color: #21293eaa;
+    border-radius: 10px;
+  }
   .ourStoryHeading h2,
   .ourVisionHeading h2 {
     text-align: center;
-    font-size: 35px;
+    font-size: 40px;
+    color: var(--primary-text-color);
   }
   .ourStoryDesc,
   .ourVisionDesc {
-    padding: 0 20px 20px 20px;
+    padding: 0px 150px 10px 150px;
     font-size: 20px;
+
+    color: var(--primary-text-color);
   }
-}
-/* ### Error Page ### */
-/* ### Error Page ### */
-@media screen and (max-width: 1920px) {
+
+  /* ==========================
+      OUR STORY AND VISION  END
+   ==========================*/
+
+  /* ==========================
+      ERROR PAGE START
+   ==========================*/
   .ErrorContainer {
     background-color: black;
     display: flex;
@@ -1059,8 +864,341 @@ form > .login-button {
     margin: 20px 0;
     cursor: pointer;
   }
+  /* ==========================
+      ERROR PAGE  END
+   ==========================*/
 }
-@media screen and (max-width: 890px) {
+
+/* ---######## Desktop CSS END ########---*/
+/* ---######## Desktop CSS END ########---*/
+/* ---######## Desktop CSS END ########---*/
+/* ---######## Desktop CSS END ########---*/
+
+
+
+
+
+
+
+
+
+
+/* ---######## Mobile View CSS START ########---*/
+/* ---######## Mobile View CSS START ########---*/
+/* ---######## Mobile View CSS START ########---*/
+/* ---######## Mobile View CSS START ########---*/
+@media screen and (max-width: 767px) {
+  /* ==========================
+     LOGIN / SIGNUP PAGE START
+   ==========================*/
+  .top-container {
+    display: flex;
+    flex-direction: column;
+  }
+  .signup-form,
+  .login-form {
+    width: 90vw;
+  }
+
+  .button {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    gap: 20px;
+  }
+  /* ==========================
+     LOGIN / SIGNUP PAGE END
+   ==========================*/
+
+  /* ==========================
+     COUNTER START
+   ==========================*/
+
+  .Counter-row img {
+    width: 30px;
+  }
+  .Counter-row p {
+    text-align: center;
+    font-size: 15px;
+  }
+  /* ==========================
+     COUNTER END
+   ==========================*/
+
+  /* ==========================
+     WHY CHOOSE US START
+   ==========================*/
+
+  .whyChooseUsBoxes {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+  }
+  .whyChooseUsBoxes .box {
+    margin: 30px 40px;
+    
+    width: 70%;
+  }
+  /* ==========================
+     WHY CHOOSE US START
+   ==========================*/
+
+  /* ==========================
+     IMAGE CONTENT SECTION START
+   ==========================*/
+  .Image-content-section {
+    display: flex;
+    flex-direction: column;
+    padding: 40px 20px;
+    justify-content: space-between;
+  }
+  .Image-desc {
+    display: flex;
+    align-items: center;
+    text-align: left;
+    padding: 10px;
+    font-size: 1rem;
+  }
+  .descImage img {
+    width: 80vw;
+  }
+  .Image-content-section3 {
+    display: flex;
+    padding: 40px 20px;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  /* ==========================
+     IMAGE CONTENT SECTION END
+   ==========================*/
+
+  /* ==========================
+     CONTACT US START
+   ==========================*/
+  
+  .ContactUsTopContainer {
+    width: 100%;
+  }
+  .ContactUsForm {
+    padding: 10px 40px;
+  }
+  .ContactUsForm textarea {
+    width: 200px;
+    height: 90px;
+  }
+  
+  /* ==========================
+     CONTACT US END
+   ==========================*/
+
+  /* ==========================
+     WHO WE ARE START
+   ==========================*/
+  .WhoWeAre {
+    padding: 20px;
+  }
+  .WhoWeAre h2 {
+    font-size: 30px;
+  }
+  .WhoWeAre p {
+    font-size: 20px;
+  }
+  /* ==========================
+     WHO WE ARE END
+   ==========================*/
+
+  /* ==========================
+    FOOTER START
+   ==========================*/
+   .footerContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    padding:15px;
+   }
+   .middleTopFooter{
+    display: flex;
+    gap:0;
+   }
+  /* ==========================
+   FOOTER END
+   ==========================*/
+
+
+
+   /* About page  */
+   /* About page  */
+   .vbuImg > img {
+    width: 100%;
+    height: 30vh;
+    
+  }
+  .AboutSection1{
+    display:flex;
+    align-items: center;
+    padding:10px;
+    font-size: 15px;
+  }
+  .AboutSection1>img{
+    height: 10vh;
+  }
+
+  /* ==========================
+    PRIVACY POLICY START
+   ==========================*/
+  .PrivacyPolicy,
+  .TermsAndConditon {
+    padding: 20px;
+  }
+  .PrivacyPolicyHeading > h2,
+  .TermsAndConditonHeading > h2 {
+    font-size: 30px;
+    text-align: center;
+    margin: 0;
+    padding: 20px;
+  }
+  .PrivacyPolicyDesc > h3,
+  .TermsAndConditionDesc > h3 {
+    font-size: 20px;
+    margin-bottom: 0;
+  }
+  /* ==========================
+     PRIVACY POLICY END
+   ==========================*/
+
+  /* ==========================
+     OUR STORY AND VISION START
+   ==========================*/
+  .ourStoryHeading h2,
+  .ourVisionHeading h2 {
+    text-align: center;
+    font-size: 35px;
+  }
+  .ourStoryDesc,
+  .ourVisionDesc {
+    padding: 0 20px 20px 20px;
+    font-size: 20px;
+  }
+  /* ==========================
+     OUR STORY AND VISION END
+   ==========================*/
+
+  /* ==========================
+     ERROR PAGE START
+   ==========================*/
+  .ErrorImage img {
+    width: 100%;
+    height: 50vh;
+  }
+  .ErrorDesc p {
+    font-size: 18px;
+    padding: 0 20px;
+    text-align: center;
+    margin: 0;
+  }
+  /* ==========================
+     ERROR PAGE END
+   ==========================*/
+}
+
+/* ---######## Mobile View CSS END ########---*/
+/* ---######## Mobile View CSS END ########---*/
+/* ---######## Mobile View CSS END ########---*/
+/* ---######## Mobile View CSS END ########---*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ---######## Tablet View CSS START ########---*/
+/* ---######## Tablet View CSS START ########---*/
+/* ---######## Tablet View CSS START ########---*/
+/* ---######## Tablet View CSS START ########---*/
+
+@media screen and (min-width: 768px)and (max-width:1023px) {
+  .login-form,.signup-form{
+    width:75%;
+  }
+  /* COUNTER  */
+  .Counter-row img {
+    width: 60px;
+  }
+  .Counter-row p {
+    text-align: center;
+    font-size: 20px;
+  }
+
+  /*=== WHY CHOOSE US ====*/
+  .whyChooseUsBoxes .box {
+    margin: 30px 20px;
+  }
+
+  /*IMAGE CONTENT SECTION */
+  .Image-content-section {
+    display: flex;
+    flex-direction: row;
+    padding: 40px 20px;
+    justify-content: space-between;
+  }
+  .Image-desc {
+    display: flex;
+    align-items: center;
+    text-align: left;
+    padding: 10px;
+    font-size: 1.2rem;
+  }
+  .descImage {
+    height: 20vh;
+  }
+  .descImage img {
+    object-fit: contain;
+    width: 40vw;
+  }
+  .Image-content-section3 {
+    display: flex;
+    padding: 40px 20px;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+  }
+
+  /* ABOUT  */
+  .vbuImg > img {
+    width: 100%;
+    height: 30vh;
+    background-size: cover;
+  }
+  .AboutSection1 {
+    padding: 30px;
+  }
+  .AboutSection1Logo {
+    height: 20vh;
+  }
+  .AboutSection1Desc {
+    font-size: 18px;
+  }
+
+  /* OUR STORY  */
+  .ourStoryHeading h2,
+  .ourVisionHeading h2 {
+    text-align: center;
+    font-size: 38px;
+  }
+  .ourStoryDesc,
+  .ourVisionDesc {
+    padding: 0 50px 50px 50px;
+    font-size: 25px;
+  }
+  /* ERROR PAGE  */
   .ErrorImage img {
     width: 100%;
     height: 60vh;
@@ -1072,15 +1210,10 @@ form > .login-button {
     margin: 0;
   }
 }
-@media screen and (max-width: 490px) {
-  .ErrorImage img {
-    width: 100%;
-    height: 50vh;
-  }
-  .ErrorDesc p {
-    font-size: 18px;
-    padding: 0 20px;
-    text-align: center;
-    margin: 0;
-  }
-}
+
+/* ---######## Tablet View CSS END ########---*/
+/* ---######## Tablet View CSS END ########---*/
+/* ---######## Tablet View CSS END ########---*/
+
+
+
