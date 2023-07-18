@@ -6,7 +6,7 @@ body {
 
 #navbar a {
   text-decoration: none;
-  color: white;
+  color: var(--tertiary-text-color);
   transition: all 0.7s;
 }
 #navbar a:hover {
@@ -18,7 +18,20 @@ body {
 /* ---######## Desktop CSS START ########---*/
 @media screen and (max-width: 1920px) {
   /* Navbar Start */
-  #navbar {
+  #navbar{
+    display: flex;
+    justify-content: space-between;   
+    position: sticky;
+    top: 0;
+    width: 100%;
+    z-index: 9999;
+    padding: 5 15px;
+    background-color: var(--tertiary-bg-color);
+    border-bottom: 1px solid var(--secondary-text-color);
+    backdrop-filter: blur(2px);
+
+  }
+  #Topnavbar {
     display: flex;
     justify-content: space-between;
     /* margin:0; */
@@ -44,14 +57,11 @@ body {
   }
   .nav-left {
     display: flex;
-
-    background-color: var(--tertiary-bg-color);
+    /* background-color: var(--tertiary-bg-color); */
   }
   .search {
     display: flex;
-
     padding-top: 5px;
-
     background-color: var(--tertiary-bg-color);
   }
   .search-icon {
@@ -64,14 +74,14 @@ body {
   }
   .nav-items {
     display: flex;
-
+    align-items: center;
     list-style-type: none;
-
-    padding: 0 10px;
+    padding: 0 15px;
   }
   .nav-items > li {
     color: white;
-    padding: 0 0.5rem;
+    padding: 0 1rem;
+    font-weight: 700;
   }
   /* === Navbar End ===  */
 
@@ -888,6 +898,19 @@ body {
 /* ---######## Mobile View CSS START ########---*/
 /* ---######## Mobile View CSS START ########---*/
 @media screen and (max-width: 767px) {
+  /* ==========================
+     NAVBAR START
+   ==========================*/
+   .nav-items > li {    
+    padding: 0 0.5rem;
+    font-weight: 500;
+    font-size: 13px;    
+  }
+  .nav-logo{
+    width:80px;
+  }
+
+
   /* ==========================
      LOGIN / SIGNUP PAGE START
    ==========================*/
