@@ -26,9 +26,9 @@ body {
     width: 100%;
     z-index: 9999;
     padding: 5 15px;
-    background-color: var(--tertiary-bg-color);
-    border-bottom: 1px solid var(--secondary-text-color);
-    backdrop-filter: blur(2px);
+    background-color: transparent;
+    /* border-bottom: 1px solid var(--secondary-text-color); */
+    backdrop-filter: blur(5px);
 
   }
   #Topnavbar {
@@ -45,14 +45,13 @@ body {
   }
   .nav-logo {
     display: block;
-    background-color: var(--tertiary-bg-color);
+    background-color: transparent;
     padding-left: 10px;
   }
 
   .avtar {
     display: inline-block;
     width: 50px;
-
     height: 50px;
   }
   .nav-left {
@@ -82,6 +81,7 @@ body {
     color: white;
     padding: 0 1rem;
     font-weight: 700;
+    
   }
   /* === Navbar End ===  */
 
@@ -146,7 +146,7 @@ body {
 
   .signup-form > h2,
   .login-form > h2 {
-    font-size: 2.5rem;
+    font-size: var(--primary-desktop-heading-font);
     color: var(--primary-color);
     padding: 40px 0 20px 0;
     margin: 0;
@@ -168,6 +168,7 @@ body {
     outline: none;
     color: var(--tertiary-text-color);
     width: 100%;
+    /* font-size: var(--tablet-paragraph-font) ; */
   }
   input:-webkit-autofill,
   input:-webkit-autofill:hover,
@@ -291,11 +292,11 @@ body {
 
   .signup-desc > h2 {
     width: 50px;
-    font-size: 40px;
+    font-size: var(--primary-desktop-heading-font);
   }
   .signup-desc > p {
     width: 50px;
-    font-size: 30px;
+    font-size: var(--secondary-desktop-heading-font);
   }
   .button {
     display: flex;
@@ -407,7 +408,7 @@ body {
     justify-content: center;
     flex-direction: column;
     align-items: center;
-    font-size: 25px;
+    font-size: var(--tertiary-desktop-heading-font);
   }
   /* ==========================
       COUNTER END
@@ -426,7 +427,7 @@ body {
     text-align: center;
   }
   .whyChooseUsHeading {
-    font-size: 25px;
+    font-size: var(--tertiary-desktop-heading-font);
   }
   .whyChooseUsBoxes {
     display: flex;
@@ -447,8 +448,12 @@ body {
   .whyChooseUsBoxes img {
     width: 30%;
   }
+  .whyChooseUs>.box>h2{
+    font-size: var(--tertiary-desktop-heading-font);
+  }
   .box > p {
     text-align: left;
+    font-size: var( --desktop-paragraph-font);
   }
   /* ==========================
       WHY CHOOSE US END
@@ -475,7 +480,7 @@ body {
     align-items: center;
     text-align: left;
     padding: 20px 100px;
-    font-size: 1.5rem;
+    font-size:var(--tertiary-desktop-heading-font)
   }
   .descImage {
     display: flex;
@@ -600,7 +605,7 @@ body {
     margin: 30px 50px;
   }
   .ContactUsHeading {
-    font-size: 25px;
+    font-size: var(--tertiary-desktop-heading-font);
     background-color: var(--primary-color);
     color: var(--primary-bg-color);
     padding: 0 40px;
@@ -627,12 +632,13 @@ body {
   .contactUsSend {
     width: 130px;
     padding: 8px;
-    font-size: 20px;
+    font-size: var(--desktop-paragraph-font);
+    font-weight: 600;
     margin: 10px 0;
     background-color: var(--primary-text-color);
     border-radius: 30px;
     transition: all 1s;
-    border: 1px solid var(--secondary-text-color);
+    border: 2px solid var(--secondary-text-color);
     color: var(--primary-bg-color);
     box-shadow: 2px var(--secondary-text-color);
   }
@@ -666,7 +672,7 @@ body {
     display: flex;
     flex: 0.8;
     color: var(--primary-text-color);
-    font-size: 20px;
+    font-size: var(--tertiary-desktop-heading-font);
     align-items: center;
   }
   /* ==========================
@@ -682,11 +688,11 @@ body {
     color: var(--primary-text-color);
   }
   .WhoWeAre h2 {
-    font-size: 40px;
+    font-size: var(--secondary-desktop-heading-font);
     text-align: center;
   }
   .WhoWeAre p {
-    font-size: 20px;
+    font-size: var(--desktop-paragraph-font);
   }
   /* ==========================
       WHO WE ARE END
@@ -703,15 +709,19 @@ body {
   }
   .PrivacyPolicyHeading > h2,
   .TermsAndConditonHeading > h2 {
-    font-size: 45px;
+    font-size: var(--primary-desktop-heading-font);
     text-align: center;
     margin: 0;
     padding: 20px;
   }
   .PrivacyPolicyDesc > h3,
   .TermsAndConditionDesc > h3 {
-    font-size: 30px;
+    font-size: var(--tertiary-desktop-heading-font);
     margin-bottom: 0;
+    text-decoration: underline;
+  }
+  .PrivacyPolicyDesc >p{
+    font-size: var(--desktop-paragraph-font);
   }
   /* ==========================
       PRIVACY POLICY END
@@ -730,7 +740,7 @@ body {
     color: var(--primary-text-color);
     text-align: center;
     padding: 20px;
-    font-size: 25px;
+    
     margin: 0;
   }
   .card {
@@ -771,6 +781,7 @@ body {
   }
   .DeveloperCrouselHeading h1 {
     margin: 0;
+    font-size: var(--secondary-desktop-heading-font);
   }
   .DeveloperCard-header {
     padding: 30px;
@@ -829,13 +840,13 @@ body {
   .ourStoryHeading h2,
   .ourVisionHeading h2 {
     text-align: center;
-    font-size: 40px;
+    font-size: var(--secondary-desktop-heading-font);
     color: var(--primary-text-color);
   }
-  .ourStoryDesc,
-  .ourVisionDesc {
+  .ourStoryDesc >p,
+  .ourVisionDesc >p {
     padding: 0px 150px 10px 150px;
-    font-size: 20px;
+    font-size: var(--desktop-paragraph-font);
 
     color: var(--primary-text-color);
   }
@@ -922,7 +933,18 @@ body {
   .login-form {
     width: 90vw;
   }
-
+  .signup-form > h2,
+  .login-form > h2 {
+    font-size: var(--primary-phone-heading-font);
+  }
+  .signup-desc > h2 {
+    
+    font-size: var(--primary-phone-heading-font);
+  }
+  .signup-desc > p {
+    
+    font-size: var(--secondary-phone-heading-font);
+  }
   .button {
     display: flex;
     justify-content: center;
@@ -942,7 +964,7 @@ body {
   }
   .Counter-row p {
     text-align: center;
-    font-size: 15px;
+    font-size: var(--phone-paragraph-font);
   }
   /* ==========================
      COUNTER END
@@ -959,9 +981,18 @@ body {
     
   }
   .whyChooseUsBoxes .box {
-    margin: 30px 40px;
-    
+    margin: 30px 40px;    
     width: 70%;
+  }
+  .whyChooseUsHeading {
+    font-size: var(--tertiary-phone-heading-font);
+  }
+  .whyChooseUs>.box>h2{
+    font-size: var(--tertiary-phone-heading-font);
+  }
+  .box > p {
+    text-align: left;
+    font-size: var( --phone-paragraph-font);
   }
   /* ==========================
      WHY CHOOSE US START
@@ -981,7 +1012,7 @@ body {
     align-items: center;
     text-align: left;
     padding: 10px;
-    font-size: 1rem;
+    font-size: var(--phone-paragraph-font);
   }
   .descImage img {
     width: 80vw;
@@ -1006,6 +1037,13 @@ body {
   .ContactUsForm {
     padding: 10px 40px;
   }
+  .ContactUsHeading>h2{
+    font-size: var(--primary-phone-heading-font);
+  }
+  .contactUsSend{
+    width: 100px;
+    font-size: var(--phone-paragraph-font);
+  }
   .ContactUsForm textarea {
     width: 200px;
     height: 90px;
@@ -1022,10 +1060,13 @@ body {
     padding: 20px;
   }
   .WhoWeAre h2 {
-    font-size: 30px;
+    font-size: var(--secondary-phone-heading-font);
   }
   .WhoWeAre p {
-    font-size: 20px;
+    font-size: var(--phone-paragraph-font);
+  }
+  .DeveloperCrouselHeading > h1{
+    font-size: var(--secondary-phone-heading-font);
   }
   /* ==========================
      WHO WE ARE END
@@ -1063,6 +1104,10 @@ body {
     padding:10px;
     font-size: 15px;
   }
+  .AboutSection1Desc {   
+    font-size: var(--phone-paragraph-font);
+    
+  }
   .AboutSection1>img{
     height: 10vh;
   }
@@ -1076,15 +1121,18 @@ body {
   }
   .PrivacyPolicyHeading > h2,
   .TermsAndConditonHeading > h2 {
-    font-size: 30px;
+    font-size: var(--primary-phone-heading-font);
     text-align: center;
     margin: 0;
     padding: 20px;
   }
   .PrivacyPolicyDesc > h3,
   .TermsAndConditionDesc > h3 {
-    font-size: 20px;
+    font-size: var(--secondary-phone-heading-font);
     margin-bottom: 0;
+  }
+  .PrivacyPolicyDesc>p, .TermsAndConditionDesc>p{
+    font-size: var(--phone-paragraph-font);
   }
   /* ==========================
      PRIVACY POLICY END
@@ -1096,12 +1144,12 @@ body {
   .ourStoryHeading h2,
   .ourVisionHeading h2 {
     text-align: center;
-    font-size: 35px;
+    font-size: var(--secondary-phone-heading-font);
   }
-  .ourStoryDesc,
-  .ourVisionDesc {
+  .ourStoryDesc>p,
+  .ourVisionDesc>p {
     padding: 0 20px 20px 20px;
-    font-size: 20px;
+    font-size: var(--phone-paragraph-font)
   }
   /* ==========================
      OUR STORY AND VISION END
@@ -1207,7 +1255,7 @@ body {
     height: 20vh;
   }
   .AboutSection1Desc {
-    font-size: 18px;
+    font-size: var(--tablet-paragraph-font);
   }
 
   /* OUR STORY  */

@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/pran-frontend/static/css/main.6f8ccf8c.css",
+    "main.css": "/pran-frontend/static/css/main.e822ee3a.css",
     "main.js": "/pran-frontend/static/js/main.8adc484c.js",
     "static/js/787.8eedfa33.chunk.js": "/pran-frontend/static/js/787.8eedfa33.chunk.js",
     "static/media/vbuImg.png": "/pran-frontend/static/media/vbuImg.75ba4ba4ec9507454b6f.png",
@@ -24,12 +24,12 @@
     "static/media/revicons.woff": "/pran-frontend/static/media/revicons.e8746a624ed098489406.woff",
     "static/media/googleplay.svg": "/pran-frontend/static/media/googleplay.7660dcd6b3b40be498aec2dcd032a4cf.svg",
     "index.html": "/pran-frontend/index.html",
-    "main.6f8ccf8c.css.map": "/pran-frontend/static/css/main.6f8ccf8c.css.map",
+    "main.e822ee3a.css.map": "/pran-frontend/static/css/main.e822ee3a.css.map",
     "main.8adc484c.js.map": "/pran-frontend/static/js/main.8adc484c.js.map",
     "787.8eedfa33.chunk.js.map": "/pran-frontend/static/js/787.8eedfa33.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.6f8ccf8c.css",
+    "static/css/main.e822ee3a.css",
     "static/js/main.8adc484c.js"
   ]
 }
