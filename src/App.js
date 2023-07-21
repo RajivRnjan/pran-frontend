@@ -26,6 +26,7 @@ function App() {
           <Route exact path="/Terms" element={<Terms />} />
           <Route exact path="/home" element={<LeftNavbar />} />
           <Route exact path="*" element={<ErrorPage />} />
+         
         </Routes>
         <Footer />
       </HashRouter>

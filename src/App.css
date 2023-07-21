@@ -358,20 +358,22 @@ body {
     list-style: none;
   }
   .leftNavbar {
-    background-color: var(--tertiary-bg-color);
+    background-color: black;
+    /* background-color: var(--tertiary-bg-color); */
     width: fit-content;
     color: white;
     height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    padding:20px 0;
   }
   .leftNavbar > .upperSection > .leftNavbarItem > li {
     padding: 18px 10px;
     width: fit-content;
   }
 
-  .leftNavbar > .lowerSection > .leftNavbarItem > li {
+  .leftNavbar > .lowerSection  .leftNavbarItem > li {
     padding: 18px 10px;
     width: fit-content;
   }
@@ -490,7 +492,7 @@ body {
   }
 
   .descImage > img {
-    border-radius: 40px;
+    border-radius: 15px;
     transition: all 0.5s;
   }
   .descImage > img:hover {
@@ -1003,7 +1005,7 @@ body {
    ==========================*/
   .Image-content-section {
     display: flex;
-    flex-direction: column;
+    flex-direction: column-reverse;
     padding: 40px 20px;
     justify-content: space-between;
   }
@@ -1011,16 +1013,17 @@ body {
     display: flex;
     align-items: center;
     text-align: left;
-    padding: 10px;
+    padding: 20px;
     font-size: var(--phone-paragraph-font);
   }
   .descImage img {
     width: 80vw;
+    height:30vh;
   }
   .Image-content-section3 {
     display: flex;
     padding: 40px 20px;
-    flex-direction: column;
+    flex-direction: column-reverse;
     justify-content: space-between;
   }
   /* ==========================
@@ -1068,6 +1071,15 @@ body {
   .DeveloperCrouselHeading > h1{
     font-size: var(--secondary-phone-heading-font);
   }
+  .card-header h2{
+    font-size: var(--secondary-phone-heading-font);
+  }
+  .card p{
+    font-size: var(--phone-paragraph-font);
+  }
+  .react-multiple-carousel__arrow{
+    display:none;
+  }
   /* ==========================
      WHO WE ARE END
    ==========================*/
@@ -1080,10 +1092,14 @@ body {
     flex-direction: column;
     align-items: stretch;
     padding:15px;
+    font-size: var(--phone-paragraph-font);
    }
    .middleTopFooter{
     display: flex;
     gap:0;
+   }
+   .rightFooter{
+    display: none;
    }
   /* ==========================
    FOOTER END
@@ -1170,6 +1186,29 @@ body {
   }
   /* ==========================
      ERROR PAGE END
+   ==========================*/
+
+
+  /* ==========================
+     Developr Crousel start
+   ==========================*/
+  .DeveloperCrouselContainer{
+    padding:0;
+    
+  }
+  .DeveloperCard-header img{
+    width:100px;
+  }
+  .DeveloperCard-Footer h2{
+     font-size: var(--secondary-phone-heading-font);
+  }
+  .DeveloperCard-Footer p{
+    font-size: var(--phone-paragraph-font);
+
+  }
+
+  /* ==========================
+    Developr Crousel start end
    ==========================*/
 }
 

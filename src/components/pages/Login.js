@@ -56,7 +56,7 @@ function Login() {
     <>
       {loading ? <Spinner /> : ""}
       <div className="background-img">
-        <div class="top-container">
+        <div className="top-container">
           <div className="login-container">
             <div className="login-form">
               <h2>Sign In</h2>
@@ -76,7 +76,7 @@ function Login() {
                   <BsEyeFill size="25px" color="#5B5B5B" />
                 </div>
 
-                <p class="forgot-password">
+                <p className="forgot-password">
                   <a>Forgot Password ?</a>
                 </p>
                 <br />
