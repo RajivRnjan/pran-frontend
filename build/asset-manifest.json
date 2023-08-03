@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/pran-frontend/static/css/main.e1c2ab61.css",
-    "main.js": "/pran-frontend/static/js/main.96f74434.js",
+    "main.css": "/pran-frontend/static/css/main.65fb9a0a.css",
+    "main.js": "/pran-frontend/static/js/main.52d7f49c.js",
     "static/js/787.8eedfa33.chunk.js": "/pran-frontend/static/js/787.8eedfa33.chunk.js",
     "static/media/vbuImg.png": "/pran-frontend/static/media/vbuImg.75ba4ba4ec9507454b6f.png",
     "static/media/img-content1.png": "/pran-frontend/static/media/img-content1.fdad822586f2abb41a5b.png",
@@ -24,12 +24,12 @@
     "static/media/revicons.woff": "/pran-frontend/static/media/revicons.e8746a624ed098489406.woff",
     "static/media/googleplay.svg": "/pran-frontend/static/media/googleplay.7660dcd6b3b40be498aec2dcd032a4cf.svg",
     "index.html": "/pran-frontend/index.html",
-    "main.e1c2ab61.css.map": "/pran-frontend/static/css/main.e1c2ab61.css.map",
-    "main.96f74434.js.map": "/pran-frontend/static/js/main.96f74434.js.map",
+    "main.65fb9a0a.css.map": "/pran-frontend/static/css/main.65fb9a0a.css.map",
+    "main.52d7f49c.js.map": "/pran-frontend/static/js/main.52d7f49c.js.map",
     "787.8eedfa33.chunk.js.map": "/pran-frontend/static/js/787.8eedfa33.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.e1c2ab61.css",
-    "static/js/main.96f74434.js"
+    "static/css/main.65fb9a0a.css",
+    "static/js/main.52d7f49c.js"
   ]
 }
