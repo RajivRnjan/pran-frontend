@@ -12,6 +12,10 @@ body {
 #navbar a:hover {
   color: var(--secondary-text-color);
 }
+input:focus{
+  border:none;
+  
+}
 /* ---######## Desktop CSS START ########---*/
 /* ---######## Desktop CSS START ########---*/
 /* ---######## Desktop CSS START ########---*/
@@ -350,49 +354,49 @@ body {
   /* ==========================
      LEFT NAVBAR START
    ==========================*/
+   .leftNavbarContainer > ul {
+     margin: 0;
+     height: 89vh;
+     padding: 0;
+     list-style: none;
+   }
+   .leftNavbar {
+     background-color: black;
+     /* background-color: var(--tertiary-bg-color); */
+     width: fit-content;
+     color: white;
+     height: 100%;
+     display: flex;
+     flex-direction: column;
+     justify-content: space-between;
+     padding:20px 0;
+   }
+   .leftNavbar > .upperSection > .leftNavbarItem > li {
+     padding: 18px 10px;
+     width: fit-content;
+   }
+ 
+   .leftNavbar > .lowerSection  .leftNavbarItem > li {
+     padding: 18px 10px;
+     width: fit-content;
+   }
+ 
+   .leftNavbarItem {
+     display: flex;
+     flex-direction: row;
+     transition: all 0.3s;
+     align-items: center;
+     padding: 0px 10px;
+   }
+ 
+   .leftNavbarItem:hover {
+     background-color: var(--primary-color);
+     color: white;
+   }
+   /* ==========================
+      LEFT NAVBAR END
+    ==========================*/
 
-  .leftNavbarContainer > ul {
-    margin: 0;
-    height: 89vh;
-    padding: 0;
-    list-style: none;
-  }
-  .leftNavbar {
-    background-color: black;
-    /* background-color: var(--tertiary-bg-color); */
-    width: fit-content;
-    color: white;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    padding:20px 0;
-  }
-  .leftNavbar > .upperSection > .leftNavbarItem > li {
-    padding: 18px 10px;
-    width: fit-content;
-  }
-
-  .leftNavbar > .lowerSection  .leftNavbarItem > li {
-    padding: 18px 10px;
-    width: fit-content;
-  }
-
-  .leftNavbarItem {
-    display: flex;
-    flex-direction: row;
-    transition: all 0.3s;
-    align-items: center;
-    padding: 0px 10px;
-  }
-
-  .leftNavbarItem:hover {
-    background-color: var(--primary-color);
-    color: white;
-  }
-  /* ==========================
-     LEFT NAVBAR END
-   ==========================*/
 
   /* ==========================
       COUNTER START
