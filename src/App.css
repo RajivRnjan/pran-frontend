@@ -129,8 +129,8 @@ input:focus{
   .signup-container,
   .login-container {
     display: flex;
-    flex: 0.7;
-    justify-content: center;
+    flex: 0.6;
+    justify-content: space-around;
     margin: 25px 0;
     opacity: 10;
   }

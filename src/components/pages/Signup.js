@@ -29,6 +29,9 @@ function Signup() {
       document.querySelector("#number").style.borderBottom =
         "1px solid #5B5B5B";
     }
+    if(number.length === 0){
+      document.querySelector("#number").style.borderBottom = "1px solid #5B5B5B";
+    }
   };
   const emailHandler = (event) => {
     event.preventDefault();
@@ -37,29 +40,45 @@ function Signup() {
 
     if (splitEmail[1] !== "gmail.com") {
       document.querySelector("#email").style.borderBottom = "1px solid red";
-    } else {
+    } 
+    else {
+      document.querySelector("#email").style.borderBottom = "1px solid #5B5B5B";
+    }
+    if(email.length === 0){
       document.querySelector("#email").style.borderBottom = "1px solid #5B5B5B";
     }
   };
 
-  // var password = "";
-  // if (document.getElementById('password') != null){
-  // var password = document.getElementById("password").value;
-  // }
-  // // console.log(password)
+  const passwordHandler = (event) =>{
+    event.preventDefault();
+    let password = document.querySelector("form").password.value;
+    if(password.length <= 5){
+      document.querySelector("#password").style.borderBottom = "1px solid red";
+    }else{
+      document.querySelector("#password").style.borderBottom = "1px solid #5B5B5B";
+    }
+    if(password.length === 0){
+      document.querySelector("#password").style.borderBottom = "1px solid #5B5B5B";
+    }
+  }
 
-  // const passwordHandler = (event)=>{
-  //   event.preventDefault();
+  const cpasswordHandler = (event) =>{
+    let password = document.querySelector("form").password.value;
+    event.preventDefault();
+    let cpassword = document.querySelector("form").cpassword.value;
+     
+    if(password !== cpassword){
+      document.querySelector("#cpassword").style.borderBottom = "1px solid red";
+    }else{
+      document.querySelector("#cpassword").style.borderBottom = "1px solid #5B5B5B";
+    }
+    if(cpassword.length === 0){
+      document.querySelector("#cpassword").style.borderBottom = "1px solid #5B5B5B";
+    }
 
-  //   let cpassword = event.target.value;
+  }
 
-  //   if(password === cpassword){
-  //     document.querySelector("#cpassword").style.border="1px solid red";
-  //   }
-  //   else{
-  //     document.querySelector("#cpassword").style.border="none";
-  //   }
-  // }
+  
 
   const [loading, setLoading] = useState(false);
 
@@ -90,6 +109,7 @@ function Signup() {
           console.log(response);
           alert(response.data.msg);
           setLoading(false);
+          navigateLogin()
         })
         .catch((error) => {
           console.log(error);
@@ -142,24 +162,25 @@ function Signup() {
                     onChange={emailHandler}
                   />
                 </div>
-                <div className="input-container">
+                <div className="input-container" id="password">
                   <RiLockPasswordLine size="25px" color="#5B5B5B" />
                   <input
                     type="password"
                     placeholder="Password"
                     name="password"
                     required
+                    onChange={passwordHandler}
                   />
                 </div>
-                <div className="input-container">
+                <div className="input-container" id="cpassword">
                   <RiLockPasswordLine size="25px" color="#5B5B5B" />
                   <input
-                    id="cpassword"
+                    
                     type="password"
                     placeholder="Confirm Password"
                     name="cpassword"
                     required
-                    // onChange={passwordHandler}
+                    onChange={cpasswordHandler}
                   />
                 </div>
                 <div className="selectElement">

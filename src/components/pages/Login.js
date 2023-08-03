@@ -25,17 +25,63 @@ function Login() {
   };
   checkLogin();
 
+
+  const emailHandle = (event) => {
+    event.preventDefault();
+    let email = event.target.value;
+    let splitEmail = email.split("@");
+
+    if (splitEmail[1] !== "gmail.com") {
+      document.querySelector("#email").style.borderBottom = "1px solid red";
+    } else {
+      document.querySelector("#email").style.borderBottom = "1px solid #5B5B5B";
+    }
+    if(email.length === 0){
+      document.querySelector("#email").style.borderBottom = "1px solid #5B5B5B";
+    }
+    
+  }
+
+  const passwordHandle = (event) =>{
+    event.preventDefault();
+    let password = document.querySelector("form").password.value;
+    if(password.length <= 5){
+      document.querySelector("#password").style.borderBottom = "1px solid red";
+      document.querySelector(".login-btn").style.backgroundColor = "#55bae2";
+      document.querySelector(".login-btn").style.cursor = "none";
+      document.getElementById("login-btn").setAttribute("disabled","true");
+    }else{
+      document.querySelector("#password").style.borderBottom = "1px solid #5B5B5B";
+      document.querySelector(".login-btn").style.backgroundColor = "#00ADEF";
+      document.querySelector(".login-btn").style.cursor = "pointer";
+      document.getElementById("login-btn").removeAttribute("disabled");
+    }
+    if(password.length === 0){
+      document.querySelector("#password").style.borderBottom = "1px solid #5B5B5B";
+      document.querySelector(".login-btn").style.backgroundColor = "#00ADEF";
+      document.getElementById("login-btn").setAttribute("disabled","true");
+        }
+  }
+
+  const showPassword = (event)=>{
+    event.preventDefault();
+    event.target.type="text";
+
+  }
+
   const [loading, setLoading] = useState(false);
 
   const submitHandler = (e) => {
+    e.preventDefault();
+    
     setLoading(true);
     axios
-      .post("https://pran.thefacts.space/api/users/userLogin", {
-        username: e.target.email.value,
+      .post("https://pran-app-backend.onrender.com/api/user/login", {
+        email: e.target.email.value,
         password: e.target.password.value,
       })
       .then((res) => {
-        if (res.data.msg == "Login Successfully") {
+        if (res.data.msg === "Login Successfull!") {
           localStorage.setItem("auth_token", res.data.auth_token);
           setLoading(false);
           checkLogin();
@@ -43,13 +89,13 @@ function Login() {
           setLoading(false);
           alert(res.data.msg);
         }
+
+       
       })
       .catch((err) => {
         setLoading(false);
         alert("Something Went Wrong...Try Again");
       });
-
-    e.preventDefault();
   };
 
   return (
@@ -62,18 +108,19 @@ function Login() {
               <h2>Sign In</h2>
 
               <form onSubmit={submitHandler}>
-                <div className="input-container">
-                  <input type="email" name="email" placeholder="E-mail" />
+                <div className="input-container" id="email">
+                  <input type="email" name="email" placeholder="E-mail" required onChange={emailHandle} />
                   <IoMdContact size="25px" color="#5B5B5B" />
                 </div>
 
-                <div className="input-container">
+                <div className="input-container" id="password" required>
                   <input
                     type="password"
                     name="password"
                     placeholder="Password"
+                    onChange={passwordHandle}
                   />
-                  <BsEyeFill size="25px" color="#5B5B5B" />
+                  <span onClick={showPassword}><BsEyeFill size="25px" color="#5B5B5B"  /></span>
                 </div>
 
                 <p className="forgot-password">
@@ -83,7 +130,7 @@ function Login() {
                 <br />
 
                 <div className="login-button">
-                  <button className="login-btn">Login</button>
+                  <button className="login-btn" id="login-btn">Login</button>
                 </div>
                 <br />
               </form>
