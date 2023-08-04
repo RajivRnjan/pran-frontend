@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/pran-frontend/static/css/main.c305ed79.css",
-    "main.js": "/pran-frontend/static/js/main.1b42de34.js",
+    "main.js": "/pran-frontend/static/js/main.59432f98.js",
     "static/js/787.8eedfa33.chunk.js": "/pran-frontend/static/js/787.8eedfa33.chunk.js",
     "static/media/vbuImg.png": "/pran-frontend/static/media/vbuImg.75ba4ba4ec9507454b6f.png",
     "static/media/img-content1.png": "/pran-frontend/static/media/img-content1.fdad822586f2abb41a5b.png",
@@ -18,6 +18,7 @@
     "static/media/google play.png": "/pran-frontend/static/media/google play.0062d57195a4e4042a95.png",
     "static/media/e-book-img.png": "/pran-frontend/static/media/e-book-img.9ce8c5c0f078ebb76168.png",
     "static/media/NehaImg.jpg": "/pran-frontend/static/media/NehaImg.e9401dc4cafc34ed590a.jpg",
+    "static/media/avtar.png": "/pran-frontend/static/media/avtar.b6d95f130647e58dcd60.png",
     "static/media/revicons.eot": "/pran-frontend/static/media/revicons.a77de540a38981833f9e.eot",
     "static/media/revicons.ttf": "/pran-frontend/static/media/revicons.57fd05d4ae650374c8de.ttf",
     "static/media/logo.svg": "/pran-frontend/static/media/logo.1fa2b6908d8c4d247e72d1709c926f73.svg",
@@ -25,11 +26,11 @@
     "static/media/googleplay.svg": "/pran-frontend/static/media/googleplay.7660dcd6b3b40be498aec2dcd032a4cf.svg",
     "index.html": "/pran-frontend/index.html",
     "main.c305ed79.css.map": "/pran-frontend/static/css/main.c305ed79.css.map",
-    "main.1b42de34.js.map": "/pran-frontend/static/js/main.1b42de34.js.map",
+    "main.59432f98.js.map": "/pran-frontend/static/js/main.59432f98.js.map",
     "787.8eedfa33.chunk.js.map": "/pran-frontend/static/js/787.8eedfa33.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.c305ed79.css",
-    "static/js/main.1b42de34.js"
+    "static/js/main.59432f98.js"
   ]
 }
