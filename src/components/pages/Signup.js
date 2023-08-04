@@ -1,8 +1,10 @@
 import React from "react";
 import axios from "axios";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 
+import Navbar from "../Navbar";
+import Footer from "../Footer";
 import Spinner from "../Spinner";
 import LoginSignupHome from "./LoginSignupHome";
 import "../../App.css";
@@ -29,8 +31,9 @@ function Signup() {
       document.querySelector("#number").style.borderBottom =
         "1px solid #5B5B5B";
     }
-    if(number.length === 0){
-      document.querySelector("#number").style.borderBottom = "1px solid #5B5B5B";
+    if (number.length === 0) {
+      document.querySelector("#number").style.borderBottom =
+        "1px solid #5B5B5B";
     }
   };
   const emailHandler = (event) => {
@@ -40,45 +43,45 @@ function Signup() {
 
     if (splitEmail[1] !== "gmail.com") {
       document.querySelector("#email").style.borderBottom = "1px solid red";
-    } 
-    else {
+    } else {
       document.querySelector("#email").style.borderBottom = "1px solid #5B5B5B";
     }
-    if(email.length === 0){
+    if (email.length === 0) {
       document.querySelector("#email").style.borderBottom = "1px solid #5B5B5B";
     }
   };
 
-  const passwordHandler = (event) =>{
+  const passwordHandler = (event) => {
     event.preventDefault();
     let password = document.querySelector("form").password.value;
-    if(password.length <= 5){
+    if (password.length <= 5) {
       document.querySelector("#password").style.borderBottom = "1px solid red";
-    }else{
-      document.querySelector("#password").style.borderBottom = "1px solid #5B5B5B";
+    } else {
+      document.querySelector("#password").style.borderBottom =
+        "1px solid #5B5B5B";
     }
-    if(password.length === 0){
-      document.querySelector("#password").style.borderBottom = "1px solid #5B5B5B";
+    if (password.length === 0) {
+      document.querySelector("#password").style.borderBottom =
+        "1px solid #5B5B5B";
     }
-  }
+  };
 
-  const cpasswordHandler = (event) =>{
+  const cpasswordHandler = (event) => {
     let password = document.querySelector("form").password.value;
     event.preventDefault();
     let cpassword = document.querySelector("form").cpassword.value;
-     
-    if(password !== cpassword){
+
+    if (password !== cpassword) {
       document.querySelector("#cpassword").style.borderBottom = "1px solid red";
-    }else{
-      document.querySelector("#cpassword").style.borderBottom = "1px solid #5B5B5B";
+    } else {
+      document.querySelector("#cpassword").style.borderBottom =
+        "1px solid #5B5B5B";
     }
-    if(cpassword.length === 0){
-      document.querySelector("#cpassword").style.borderBottom = "1px solid #5B5B5B";
+    if (cpassword.length === 0) {
+      document.querySelector("#cpassword").style.borderBottom =
+        "1px solid #5B5B5B";
     }
-
-  }
-
-  
+  };
 
   const [loading, setLoading] = useState(false);
 
@@ -109,7 +112,7 @@ function Signup() {
           console.log(response);
           alert(response.data.msg);
           setLoading(false);
-          navigateLogin()
+          navigateLogin();
         })
         .catch((error) => {
           console.log(error);
@@ -121,8 +124,31 @@ function Signup() {
     }
   };
 
+  // GET Course Sem List
+  const [courses, setCourses] = useState([]);
+  const [sem, setSem] = useState([]);
+
+  useEffect(() => {
+    axios
+      .get("https://pran-app-backend.onrender.com/api/course/courseList")
+      .then((response) => {
+        const { data } = response;
+
+        setCourses(data.courses);
+        // console.log(data.courses)
+      });
+  }, []);
+
+  const [selectedCourse, setSelectedCourse] = useState("BCA");
+  const selectCourseHandle = (e) => {
+    e.preventDefault();
+    setSelectedCourse(e.target.value);
+    // console.log(e.target.value);
+  };
+
   return (
     <>
+    <Navbar/>
       {loading ? <Spinner /> : ""}
       <div className="background-img">
         <div className="top-container">
@@ -175,7 +201,6 @@ function Signup() {
                 <div className="input-container" id="cpassword">
                   <RiLockPasswordLine size="25px" color="#5B5B5B" />
                   <input
-                    
                     type="password"
                     placeholder="Confirm Password"
                     name="cpassword"
@@ -196,10 +221,21 @@ function Signup() {
                   <div className="course-sem">
                     <div className="input-container select-courses">
                       <MdSchool size="25px" color="#5B5B5B" />
-                      <select className="clg" name="course" required>
-                        <option value="">Courses</option>
-                        <option value="BCA">BCA</option>
-                        <option value="MCA">MCA</option>
+                      <select
+                        className="clg"
+                        name="course"
+                        value={selectedCourse}
+                        required
+                        onChange={selectCourseHandle}
+                      >
+                        {courses.map((course) => {
+                          // console.log(course.course)
+                          return (
+                            <option value={course.course}>
+                              {course.course}
+                            </option>
+                          );
+                        })}
                       </select>
                     </div>
 
@@ -207,13 +243,15 @@ function Signup() {
                       <MdSchool size="25px" color="#5B5B5B" />
 
                       <select className="clg" name="sem" required>
-                        <option>Semester</option>
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                        <option value="5">5</option>
-                        <option value="6">6</option>
+                        {courses.map((course) => {
+                          if (course.course === selectedCourse) {
+                            return course.sem.map((sem) => {
+                              console.log(sem);
+
+                              return <option value={sem}>{sem}</option>;
+                            });
+                          }
+                        })}
                       </select>
                     </div>
                   </div>
@@ -256,6 +294,7 @@ function Signup() {
 
       <LoginSignupHome />
       <Crousel />
+      <Footer/>
     </>
   );
 }

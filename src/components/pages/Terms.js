@@ -1,8 +1,11 @@
 import React from "react";
+import Navbar from "../Navbar";
+import Footer from "../Footer";
 
 function Terms() {
   return (
     <>
+    <Navbar/>
       <div className="TermsAndConditon">
         <div className="TermsAndConditonHeading">
           <h2>Terms & Condition</h2>
@@ -277,6 +280,7 @@ function Terms() {
           </p>
         </div>
       </div>
+      <Footer/>
     </>
   );
 }

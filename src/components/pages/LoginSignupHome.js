@@ -1,6 +1,7 @@
 import React from "react";
 import CounterSection from "../CounterSection";
 
+
 import notesImg from "../../Images/notes.png";
 import pyqImg from "../../Images/pyq.png";
 import youtubeImg from "../../Images/youtube-img.png";
@@ -14,6 +15,7 @@ import imageContent3 from "../../Images/img-content3.jpg";
 function LoginSignupHome() {
   return (
     <>
+   
       {/* COUNTER */}
       {/* COUNTER */}
 
@@ -127,6 +129,7 @@ function LoginSignupHome() {
           </div>
         </div>
       </div>
+     
     </>
   );
 }

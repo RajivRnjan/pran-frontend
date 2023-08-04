@@ -1,8 +1,10 @@
 import React from "react";
-
+import Navbar from "../Navbar";
+import Footer from "../Footer";
 function PrivacyPolicy() {
   return (
     <>
+    <Navbar/>
       <div className="PrivacyPolicy">
         <div className="PrivacyPolicyHeading">
           <h2>Privacy Policy</h2>
@@ -221,6 +223,7 @@ function PrivacyPolicy() {
           </p>
         </div>
       </div>
+      <Footer/>
     </>
   );
 }

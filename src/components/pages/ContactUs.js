@@ -1,10 +1,13 @@
 import React from "react";
 import { SlNote } from "react-icons/sl";
 import { MdEmail } from "react-icons/md";
+import Navbar from "../Navbar";
+import Footer from "../Footer";
 
 function ContactUs() {
   return (
     <>
+    <Navbar/>
       <div className="ContactUsBackgroundImg">
         <div className="ContactUsTopContainer">
           <div className="ContactUs">
@@ -45,6 +48,7 @@ function ContactUs() {
           </div>
         </div>
       </div>
+      <Footer/>
     </>
   );
 }

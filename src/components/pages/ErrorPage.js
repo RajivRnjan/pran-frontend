@@ -1,10 +1,13 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import Error from "../../Images/Error.png";
+import Navbar from "../Navbar";
+import Footer from "../Footer";
 
 function ErrorPage() {
   return (
     <>
+    <Navbar/>
       <div className="ErrorContainer">
         <div className="ErrorImage">
           <img src={Error} alt="Error" />
@@ -21,6 +24,7 @@ function ErrorPage() {
           </Link>
         </div>
       </div>
+      <Footer/>
     </>
   );
 }

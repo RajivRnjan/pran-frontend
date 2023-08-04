@@ -4,10 +4,13 @@ import logo from "../../Images/logo.svg";
 import CounterSection from "../CounterSection";
 import Crousel from "../Crousel";
 import DeveloperCrousel from "../DeveloperCrousel";
+import Navbar from "../Navbar";
+import Footer from "../Footer";
 
 function AboutUs() {
   return (
     <>
+    <Navbar/>
       <div className="vbuImg">
         <img src={vbuImg} alt="vbuImg" />
       </div>
@@ -107,6 +110,7 @@ function AboutUs() {
       {/* SpeicalThanksTo End */}
 
       <Crousel />
+      <Footer/>
     </>
   );
 }

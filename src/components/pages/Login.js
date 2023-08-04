@@ -2,7 +2,8 @@ import React from "react";
 import axios from "axios";
 import { useState, useEffect } from "react";
 import "../../App.css";
-
+import Navbar from "../Navbar";
+import Footer from "../Footer";
 import Spinner from "../Spinner";
 import Crousel from "../Crousel";
 import LoginSignupHome from "./LoginSignupHome";
@@ -10,6 +11,7 @@ import study from "../../Images/study.png";
 import { Link, useNavigate } from "react-router-dom";
 import { IoMdContact } from "react-icons/io";
 import { BsEyeFill } from "react-icons/bs";
+import {RiEyeCloseFill} from "react-icons/ri"
 
 function Login() {
   const navigate = useNavigate();
@@ -42,32 +44,47 @@ function Login() {
     
   }
 
-  const passwordHandle = (event) =>{
+
+
+
+  const [ passwordType, setPasswordType] = useState("password");
+  const [passwordInput, setPasswordInput] = useState("");
+  const passwordHandler = (event) =>{
     event.preventDefault();
-    let password = document.querySelector("form").password.value;
-    if(password.length <= 5){
-      document.querySelector("#password").style.borderBottom = "1px solid red";
-      document.querySelector(".login-btn").style.backgroundColor = "#55bae2";
-      document.querySelector(".login-btn").style.cursor = "none";
-      document.getElementById("login-btn").setAttribute("disabled","true");
-    }else{
-      document.querySelector("#password").style.borderBottom = "1px solid #5B5B5B";
-      document.querySelector(".login-btn").style.backgroundColor = "#00ADEF";
-      document.querySelector(".login-btn").style.cursor = "pointer";
-      document.getElementById("login-btn").removeAttribute("disabled");
-    }
-    if(password.length === 0){
-      document.querySelector("#password").style.borderBottom = "1px solid #5B5B5B";
-      document.querySelector(".login-btn").style.backgroundColor = "#00ADEF";
-      document.getElementById("login-btn").setAttribute("disabled","true");
-        }
+   
+  
+  setPasswordInput(event.target.value);
+
+// validation password
+  let password = document.querySelector("form").password.value;
+  if(password.length <= 5){
+    document.querySelector("#password").style.borderBottom = "1px solid red";
+    document.querySelector(".login-btn").style.backgroundColor = "#55bae2";
+    document.querySelector(".login-btn").style.cursor = "none";
+    document.getElementById("login-btn").setAttribute("disabled","true");
+  }else{
+    document.querySelector("#password").style.borderBottom = "1px solid #5B5B5B";
+    document.querySelector(".login-btn").style.backgroundColor = "#00ADEF";
+    document.querySelector(".login-btn").style.cursor = "pointer";
+    document.getElementById("login-btn").removeAttribute("disabled");
+  }
+  if(password.length === 0){
+    document.querySelector("#password").style.borderBottom = "1px solid #5B5B5B";
+    document.querySelector(".login-btn").style.backgroundColor = "#00ADEF";
+    document.getElementById("login-btn").setAttribute("disabled","true");
+      }
+}
+
+ 
+
+ const togglePassword = ()=>{
+  if(passwordType === "password"){
+    setPasswordType("text")
+  }else{
+  setPasswordType("password");
   }
 
-  const showPassword = (event)=>{
-    event.preventDefault();
-    event.target.type="text";
-
-  }
+ }
 
   const [loading, setLoading] = useState(false);
 
@@ -100,7 +117,9 @@ function Login() {
 
   return (
     <>
+      <Navbar />
       {loading ? <Spinner /> : ""}
+    
       <div className="background-img">
         <div className="top-container">
           <div className="login-container">
@@ -115,12 +134,16 @@ function Login() {
 
                 <div className="input-container" id="password" required>
                   <input
-                    type="password"
+                    type={passwordType}
                     name="password"
+                    value = {passwordInput}
                     placeholder="Password"
-                    onChange={passwordHandle}
+                    onChange={passwordHandler}
+                    
                   />
-                  <span onClick={showPassword}><BsEyeFill size="25px" color="#5B5B5B"  /></span>
+                  <span onClick={togglePassword}>
+                  {passwordType === "password" ? < RiEyeCloseFill size="25px" color="#5B5B5B"  /> : <BsEyeFill size="25px" color="#5B5B5B"/>}
+                  </span>
                 </div>
 
                 <p className="forgot-password">
@@ -160,6 +183,7 @@ function Login() {
 
       <LoginSignupHome />
       <Crousel />
+      <Footer/>
     </>
   );
 }
