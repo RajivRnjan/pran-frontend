@@ -9,6 +9,8 @@ function Navbar() {
         window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
       };
   return (
+    <>
+    <nav>
     <div id="navbar">
        <div className="nav-left">
          <Link to="/">
@@ -20,15 +22,17 @@ function Navbar() {
 
     <div className="nav-right">
       <ul className="nav-items">
-        <li onClick={gotoTopWindow}><Link to="/home">Home</Link></li>
+        <li onClick={gotoTopWindow}><Link to="/Login">Home</Link></li>
         <li onClick={gotoTopWindow}><Link to="/AboutUs">About</Link></li>
-        <li onClick={gotoTopWindow}><Link to="/Signup">Signup</Link></li>
+        {/* <li onClick={gotoTopWindow}><Link to="/Signup">Signup</Link></li> */}
         {/* <li onClick={gotoTopWindow}><Link to="/Login">Login</Link></li> */}
         <li onClick={gotoTopWindow}><Link to="/ContactUs">Contact</Link></li>
 
       </ul>
     </div>
     </div>
+    </nav>
+    </>
   )
 }
 

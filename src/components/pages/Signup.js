@@ -1,7 +1,7 @@
 import React from "react";
 import axios from "axios";
 import { useState, useEffect } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useFetcher, useNavigate } from "react-router-dom";
 
 import Navbar from "../Navbar";
 import Footer from "../Footer";
@@ -13,13 +13,16 @@ import { BsFillHouseUpFill } from "react-icons/bs";
 import { RiCheckboxCircleFill, RiLockPasswordLine } from "react-icons/ri";
 import { IoMdContact } from "react-icons/io";
 import { MdSmartphone, MdSchool, MdEmail } from "react-icons/md";
-
+import { toast,ToastContainer } from "react-toastify";
+import {Helmet} from "react-helmet";
 function Signup() {
+
   const navigate = useNavigate();
   const navigateLogin = () => {
     navigate("/login");
   };
 
+  
   const numberHandler = (event) => {
     event.preventDefault();
     let number = event.target.value;
@@ -27,16 +30,19 @@ function Signup() {
 
     if (numberStr.length < 10 || number < 6000000000 || number >= 9999999999) {
       document.querySelector("#number").style.borderBottom = "1px solid red";
+     
     } else {
+     
       document.querySelector("#number").style.borderBottom =
         "1px solid #5B5B5B";
+       
     }
-    if (number.length === 0) {
-      document.querySelector("#number").style.borderBottom =
-        "1px solid #5B5B5B";
-    }
+    
   };
+
+
   const emailHandler = (event) => {
+
     event.preventDefault();
     let email = event.target.value;
     let splitEmail = email.split("@");
@@ -86,6 +92,10 @@ function Signup() {
   const [loading, setLoading] = useState(false);
 
   const handleSubmit = (event) => {
+    toast("Please Wait...",{
+      theme:'dark',
+      autoClose:2000,
+    })
     setLoading(true);
     event.preventDefault();
     const name = event.target.name.value;
@@ -97,9 +107,9 @@ function Signup() {
     const course = event.target.course.value;
     const sem = event.target.sem.value;
 
-    if (password === cpassword) {
+    if ((password === cpassword) && (college !== "select" )){
       axios
-        .post("https://pran-app-backend.onrender.com/api/user/signup", {
+        .post("/api/user/signup", {
           name,
           number,
           email,
@@ -110,6 +120,10 @@ function Signup() {
         })
         .then((response) => {
           console.log(response);
+          toast(response.data.msg,{
+            theme:'dark',
+            autoClose:2000,
+          })
           alert(response.data.msg);
           setLoading(false);
           navigateLogin();
@@ -119,22 +133,43 @@ function Signup() {
           setLoading(false);
         });
     } else {
-      alert("Password Mismatched");
+      toast("Incorrect Input")
+      // alert("Incorrect Input");
       setLoading(false);
     }
   };
+// GET College List
+const [colleges,setColleges]= useState([]);
+useEffect(()=>{
+  toast("Note : Incorrect Email user may Face Some issues later..",{
+    theme:'dark',
+    autoClose:2000,
+  })
 
+  setLoading(true);
+
+  axios.
+  get("/api/college/getColleges")
+  .then((response)=>{
+    const {data} = response;
+    setColleges(data.colleges);
+    setLoading(false);
+  })
+},[])
   // GET Course Sem List
   const [courses, setCourses] = useState([]);
   const [sem, setSem] = useState([]);
 
   useEffect(() => {
+    setLoading(true);
+
     axios
-      .get("https://pran-app-backend.onrender.com/api/course/courseList")
+      .get("/api/course/courseList")
       .then((response) => {
         const { data } = response;
 
         setCourses(data.courses);
+        setLoading(false);
         // console.log(data.courses)
       });
   }, []);
@@ -148,8 +183,12 @@ function Signup() {
 
   return (
     <>
+    <Helmet>
+				<title>PRAN - Signup</title>
+			</Helmet>
     <Navbar/>
       {loading ? <Spinner /> : ""}
+      {/* <ToastContainer/> */}
       <div className="background-img">
         <div className="top-container">
           <div className="signup-container">
@@ -169,7 +208,7 @@ function Signup() {
                 <div className="input-container" id="number">
                   <MdSmartphone size="25px" color="#5B5B5B" />{" "}
                   <input
-                    type="number"
+                    type="number" min="6000000000" max="9999999999"
                     placeholder="Enter Mobile No"
                     name="number"
                     pattern="[6789][0-9]{9}"
@@ -194,6 +233,7 @@ function Signup() {
                     type="password"
                     placeholder="Password"
                     name="password"
+                    minLength="6"
                     required
                     onChange={passwordHandler}
                   />
@@ -212,9 +252,16 @@ function Signup() {
                   <div className="input-container select-college">
                     <BsFillHouseUpFill size="20px" color="#5B5B5B" />
                     <select className="clg" name="college" required>
-                      <option value="select">Select Colleges</option>
-                      <option value="vbu">VBU</option>
-                      <option value="St.colomba's">St. colomba's</option>
+                      <option value="select">Select College</option>
+                    {colleges.map((college) => {
+                          return (
+                            <option value={college.name}>
+                              {college.name}
+                            </option>
+                          );
+                        })}
+                    
+                      
                     </select>
                   </div>
 
@@ -246,7 +293,7 @@ function Signup() {
                         {courses.map((course) => {
                           if (course.course === selectedCourse) {
                             return course.sem.map((sem) => {
-                              console.log(sem);
+                              // console.log(sem);
 
                               return <option value={sem}>{sem}</option>;
                             });
@@ -293,7 +340,7 @@ function Signup() {
       </div>
 
       <LoginSignupHome />
-      <Crousel />
+      <Crousel   />
       <Footer/>
     </>
   );

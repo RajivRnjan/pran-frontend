@@ -6,7 +6,6 @@ import Rajiv from "../Images/RajivImg.png";
 import Neha from "../Images/NehaImg.jpg";
 import Pawan from "../Images/PawanImg.png";
 import Aditya from "../Images/AdityaImg.png";
-import Sandeep from "../Images/SandeepImg.png";
 
 const responsive = {
   superLargeDesktop: {
@@ -48,7 +47,7 @@ function DeveloperCrousel() {
 
             <div className="DeveloperCard-Footer">
               <h2>Navin Kumar</h2>
-              <p>FrontEnd & BackEnd Developer</p>
+              <p>Backend Developer</p>
             </div>
           </div>
 
@@ -59,7 +58,7 @@ function DeveloperCrousel() {
 
             <div className="DeveloperCard-Footer">
               <h2>Rajiv Ranjan</h2>
-              <p>FrontEnd & BackEnd Developer</p>
+              <p>Frontend  Developer</p>
             </div>
           </div>
 
@@ -81,21 +80,11 @@ function DeveloperCrousel() {
 
             <div className="DeveloperCard-Footer">
               <h2>Pawan Kumar</h2>
-              <p>Graphics Designer</p>
+              <p>UI/UX Designer</p>
             </div>
           </div>
 
-          <div className="DeveloperCard">
-            <div className="DeveloperCard-header">
-              <img src={Sandeep} />
-            </div>
-
-            <div className="DeveloperCard-Footer">
-              <h2>Sandeep Kumar</h2>
-              <p>Google Play Support</p>
-            </div>
-          </div>
-
+          
           <div className="DeveloperCard">
             <div className="DeveloperCard-header">
               <img src={Aditya} />
@@ -103,7 +92,7 @@ function DeveloperCrousel() {
 
             <div className="DeveloperCard-Footer">
               <h2>Aditya Kumar</h2>
-              <p>Graphics Designer</p>
+              <p>UI/UX Designer</p>
             </div>
           </div>
         </Carousel>

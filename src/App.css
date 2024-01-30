@@ -2,6 +2,48 @@
 body {
   background-color: var(--primary-bg-color);
   overflow-x: hidden;
+  color: #ffffff;
+}
+button,
+select {
+  cursor: pointer !important;
+}
+iframe {
+  width: 100%;
+  height: 100vh;
+  border: none;
+}
+a {
+  all: unset;
+  cursor: pointer !important;
+  
+}
+a:active {      
+  background-color: transparent;
+}
+.spinner {
+  position: fixed;
+  z-index: 99999;
+}
+/*Go back btn*/
+/*Go back btn*/
+.Back {
+  display: inline;
+  padding: 0 10px;
+}
+.Back-icon {
+  font-size: 20px;
+  transform: rotate(180deg);
+}
+@media screen and (max-width: 769px) {
+  .Back-icon {
+    font-size: 15px;
+  }
+}
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 9999;
 }
 
 #navbar a {
@@ -9,12 +51,37 @@ body {
   color: var(--tertiary-text-color);
   transition: all 0.7s;
 }
+
 #navbar a:hover {
   color: var(--secondary-text-color);
 }
-input:focus{
-  border:none;
-  
+input:focus {
+  border: none;
+}
+.watchNowbtn {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.watchNow {
+  padding: 10px 20px;
+  background-color: var(--primary-color);
+  border: 1px solid var(--secondary-color);
+  border-radius: 20px;
+  color: #ffffff;
+  animation: pulse 1.8s infinite;
+}
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 #6366f1;
+  }
+  65% {
+    box-shadow: 0 0 0 15px transparent;
+  }
+  100% {
+    box-shadow: 0 0 0 transparent;
+  }
 }
 /* ---######## Desktop CSS START ########---*/
 /* ---######## Desktop CSS START ########---*/
@@ -22,8 +89,8 @@ input:focus{
 /* ---######## Desktop CSS START ########---*/
 @media screen and (max-width: 1920px) {
   /* Navbar Start */
-  #navbar{
-    display: flex;
+  #navbar {
+    /* display: flex;
     justify-content: space-between;   
     position: sticky;
     top: 0;
@@ -31,49 +98,86 @@ input:focus{
     z-index: 9999;
     padding: 5 15px;
     background-color: transparent;
-    /* border-bottom: 1px solid var(--secondary-text-color); */
-    backdrop-filter: blur(5px);
-
+    border-bottom: 1px solid var(--secondary-text-color);
+    backdrop-filter: blur(5px); */
   }
-  #Topnavbar {
+  #navbar {
+    /* position: sticky;
+    top: 0; */
     display: flex;
     justify-content: space-between;
-    /* margin:0; */
-    position: sticky;
-    top: 0;
-    width: 100%;
-    z-index: 9999;
-    padding: 5 15px;
-    background-color: var(--tertiary-bg-color);
+    z-index: 9900;
+    background-color: #000000;
+    padding: 5px 10px 5px 5px;
+    overflow: hidden;
+
+    align-items: center;
     border-bottom: 1px solid var(--secondary-text-color);
   }
-  .nav-logo {
+  .NavbarContainer {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 10px;
+  }
+
+  .NavbarContainer .nav-logo {
     display: block;
     background-color: transparent;
     padding-left: 10px;
+    width: max-content;
+    height: max-content;
   }
 
-  .avtar {
+  .avtar-img {
     display: inline-block;
+    border-radius: 50%;
     width: 50px;
     height: 50px;
   }
   .nav-left {
     display: flex;
-    /* background-color: var(--tertiary-bg-color); */
   }
   .search {
+    width: 100%;
+    border: 3px solid black;
+
+    border-radius: 30px;
+    box-shadow: 0px 2px 5px #616161;
+    background-clip: #2b2828;
+    color: #5a5a5a;
+    font-size: 15px;
     display: flex;
-    padding-top: 5px;
+    /* justify-content: space-between; */
+    align-items: center;
+    padding: 5px;
     background-color: var(--tertiary-bg-color);
   }
-  .search-icon {
+  .search input[type="text"] {
+    width: 40vw;
+  }
+  /* .search-icon {
     height: 5px;
     padding: 18px 180px;
-  }
+  } */
 
   .nav-right {
     display: flex;
+    align-items: center;
+    gap: 30px;
+  }
+  .CourseSelect,
+  .SemSelect {
+    width: 100%;
+  }
+  .CourseSelect select,
+  .SemSelect select {
+    outline: none;
+    background-color: black;
+    border: none;
+    color: #ffffff;
+    font-size: 20px;
   }
   .nav-items {
     display: flex;
@@ -85,8 +189,8 @@ input:focus{
     color: white;
     padding: 0 1rem;
     font-weight: 700;
-    
   }
+
   /* === Navbar End ===  */
 
   /* === Signup CSS === */
@@ -134,6 +238,22 @@ input:focus{
     margin: 25px 0;
     opacity: 10;
   }
+  .forgot-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0 20px;
+  }
+
+  .password-form {
+    width: 400px;
+    padding: 15px;
+    background-color: var(--secondary-bg-color);
+
+    border-radius: 20px;
+    text-align: center;
+  }
 
   .signup-form,
   .login-form {
@@ -149,14 +269,16 @@ input:focus{
   }
 
   .signup-form > h2,
-  .login-form > h2 {
+  .login-form > h2,
+  .password-form > h2 {
     font-size: var(--primary-desktop-heading-font);
     color: var(--primary-color);
     padding: 40px 0 20px 0;
     margin: 0;
   }
   .signup-form > form,
-  .login-form > form {
+  .login-form > form,
+  .password-form > form {
     display: flex;
     flex-direction: column;
     padding: 0 30px;
@@ -229,7 +351,7 @@ input:focus{
     padding: 15px 0 2px 0;
     margin-left: 5px;
   }
-  select {
+  .signup-form select {
     border: none;
     outline: none;
     width: 90%;
@@ -277,6 +399,14 @@ input:focus{
     justify-content: center;
     align-items: center;
     font-size: 15px;
+    transition: all 0.3s ease-in-out;
+  }
+  .register-btn,
+  .login-btn,
+  .get-started,
+  .sign-in,
+  .sign-up {
+    transform: scale(0.93);
   }
   form > .register-button,
   form > .login-button {
@@ -312,16 +442,18 @@ input:focus{
   .button > .sign-up {
     background-color: transparent;
     border: 2px solid var(--primary-color);
-    transition: all 1s;
+    transition: all 0.3s ease-in-out;
   }
   .button > .sign-in:hover,
   .button > .sign-up:hover {
     background-color: var(--primary-color);
     color: white;
+    transform: scale(0.93);
   }
   .button > .get-started {
     /* margin-right:20px; */
     border: 2px solid var(--primary-color);
+    transform: scale(0.93);
   }
   /* === Signup Css End ===  */
 
@@ -330,6 +462,14 @@ input:focus{
    ==========================*/
 
   .login-form > form > .forgot-password {
+    display: flex;
+    justify-content: flex-end;
+    color: var(--primary-color);
+    text-decoration: none;
+    font-size: 13px;
+    margin: 0;
+  }
+  .forgot-password {
     display: flex;
     justify-content: flex-end;
     color: var(--primary-color);
@@ -354,49 +494,258 @@ input:focus{
   /* ==========================
      LEFT NAVBAR START
    ==========================*/
-   .leftNavbarContainer > ul {
-     margin: 0;
-     height: 89vh;
-     padding: 0;
-     list-style: none;
-   }
-   .leftNavbar {
-     background-color: black;
-     /* background-color: var(--tertiary-bg-color); */
-     width: fit-content;
-     color: white;
-     height: 100%;
-     display: flex;
-     flex-direction: column;
-     justify-content: space-between;
-     padding:20px 0;
-   }
-   .leftNavbar > .upperSection > .leftNavbarItem > li {
-     padding: 18px 10px;
-     width: fit-content;
-   }
- 
-   .leftNavbar > .lowerSection  .leftNavbarItem > li {
-     padding: 18px 10px;
-     width: fit-content;
-   }
- 
-   .leftNavbarItem {
-     display: flex;
-     flex-direction: row;
-     transition: all 0.3s;
-     align-items: center;
-     padding: 0px 10px;
-   }
- 
-   .leftNavbarItem:hover {
-     background-color: var(--primary-color);
-     color: white;
-   }
-   /* ==========================
+  .active {
+    color: var(--primary-color);
+    background-color: var(--primary-color);
+  }
+
+  .leftNavbarTopContainer {
+    width: max-content;
+    border-right: 1px solid var(--secondary-text-color);
+  }
+  .leftNavbarContainer {
+    position: fixed;
+    background-color: black;
+    height: 100vh;
+  }
+  .leftNavbarContainer > ul {
+    margin: 0;
+    /* height: 91vh; */
+    padding: 0;
+    list-style: none;
+  }
+  .leftNavbar {
+    /* background-color: var(--tertiary-bg-color); */
+    width: fit-content;
+    color: white;
+    height: -webkit-fill-available;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20px 0;
+  }
+  .leftNavbar .upperSection .leftNavbarItem li {
+    padding: 18px 10px;
+    width: fit-content;
+  }
+
+  .leftNavbar .lowerSection .leftNavbarItem li {
+    padding: 18px 10px;
+    width: fit-content;
+  }
+
+  .leftNavbarItem {
+    display: flex;
+    flex-direction: row;
+    transition: all 0.3s;
+    align-items: center;
+    padding: 0px 10px;
+    cursor: pointer;
+  }
+
+  .leftNavbarItem:hover {
+    background-color: var(--primary-color);
+    color: white;
+  }
+  /* ==========================
       LEFT NAVBAR END
     ==========================*/
 
+  /* ==========================
+      MY ACCOUNT START
+    ==========================*/
+  .MyAccountContainer .Container {
+    display: flex;
+    flex-direction: column;
+  }
+  .MyAccountContainer .container .BottomContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  .MyAccountContainer .BottomContainer .Item {
+    display: flex;
+    gap: 15px;
+    font-size: var(--desktop-paragraph-font);
+  }
+  .MyAccountContainer .Container .Cover img {
+    display: inline-block;
+    width: 78vw;
+    height: 20vh;
+    object-fit: cover;
+  }
+  .MyAccountContainer .Container .Photo img {
+    width: 100px;
+    position: relative;
+    bottom: 50px;
+    left: 70px;
+  }
+  .MyAccountContainer .Container .Bottom {
+    display: flex;
+    justify-content: space-between;
+    margin-right: 200px;
+  }
+
+  .BottomLeft,
+  .BottomRight {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    padding: 20px;
+  }
+  .MyAccountContainer .label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: var(--tertiary-tablet-heading-font);
+    padding: 5px;
+    color: var(--tertiary-text-color);
+    border-bottom: 1px solid var(--tertiary-text-color);
+  }
+  .MyAccountContainer .course-sem {
+    display: flex;
+    gap: 50px;
+  }
+  .MyAccountContainer .course-sem > .label {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: inherit;
+    border-bottom: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    background-color: var(--secondary-text-color);
+    color: #ffffff;
+  }
+  .MyAccountContainer .container {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+  }
+  .MyAccountContainer .container .Top {
+    display: flex;
+    justify-content: space-between;
+    background-color: #202020;
+    border-radius: 10px;
+    padding: 20px 40px;
+  }
+  .MyAccountContainer .TopLeft .Desc div {
+    display: flex;
+    gap: 20px;
+  }
+  .MyAccountContainer .TopLeft .Desc div p {
+    margin-bottom: 0px;
+  }
+  .MyAccountContainer .plan {
+    color: #53fe83;
+    font-weight: 500;
+  }
+  .MyAccountContainer .TopLeft .Desc h4 {
+    font-size: var(--tertiary-desktop-heading-font);
+    margin-bottom: 0;
+  }
+  .MyAccountContainer .TopLeft {
+    display: flex;
+    flex-direction: row;
+    gap: 100px;
+  }
+  .MyAccountContainer .TopLeft .Desc button {
+    outline: none;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    background-color: var(--primary-color);
+    color: var(--primary-text-color);
+    transition: all 0.5s ease-in-out;
+  }
+  .MyAccountContainer .TopLeft .Desc button:hover {
+    transform: scale(0.93);
+  }
+  .MyAccountContainer .TopLeft img {
+    width: 150px;
+  }
+  .MyAccountContainer .TopRight {
+    display: flex;
+    gap: 10px;
+    height: 20px;
+    justify-content: center;
+    align-items: center;
+    outline: none;
+    border: none;
+    padding: 10px 30px;
+    border-radius: 5px;
+    background-color: #000000;
+    color: hsl(137, 99%, 66%);
+  }
+  .MyAccountContainer .TopRight button {
+    all: unset;
+  }
+
+  @media screen and (max-width: 769px) {
+    .MyAccountContainer .Container .Bottom {
+      display: flex;
+      flex-direction: column;
+    }
+    .MyAccountContainer .Container .Bottom {
+      margin-right: 0;
+    }
+    .MyAccountContainer .Container .Photo img {
+      position: relative;
+      bottom: 50px;
+      left: 40px;
+    }
+
+    .MyAccountContainer .label {
+      padding: 0 0 5px 0;
+      font-size: var(--phone-paragraph-font);
+    }
+    .MyAccountContainer .container .Top {
+      flex-direction: column;
+      gap: 20px;
+      padding: 10px;
+    }
+    .MyAccountContainer .TopLeft img {
+      width: 100px;
+    }
+    .MyAccountContainer .TopLeft .Desc div {
+      flex-direction: column;
+      gap: 10px;
+    }
+    .MyAccountContainer .TopLeft .Desc div p {
+      margin: 0;
+    }
+    .MyAccountContainer .TopLeft {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+    .MyAccountContainer .TopLeft {
+      flex-direction: column;
+      gap: 0;
+    }
+
+    .MyAccountContainer .container {
+      gap: 20px;
+    }
+    .MyAccountContainer .TopLeft .Desc h4 {
+      font-size: var(--secondary-phone-heading-font);
+      margin: 5px 0;
+    }
+    .MyAccountContainer .TopLeft .Desc div p {
+      font-size: var(--phone-paragraph-font);
+    }
+
+    .MyAccountContainer .container .BottomContainer {
+      gap: 10px;
+    }
+    .MyAccountContainer .BottomContainer .Item {
+      /* font-size: var(--tertiary-phone-heading-font); */
+      font-size: var(--phone-paragraph-font);
+    }
+  }
+  /* ==========================
+      MY ACCOUNT END
+    ==========================*/
 
   /* ==========================
       COUNTER START
@@ -407,7 +756,7 @@ input:focus{
     display: flex;
     justify-content: space-around;
     padding: 30px 20px 20px 20px;
-    gap:10px;
+    gap: 10px;
   }
   .Counter-row {
     display: flex;
@@ -437,13 +786,12 @@ input:focus{
   }
   .whyChooseUsBoxes {
     display: flex;
-    
   }
   .whyChooseUsBoxes .box {
     border: 2px solid var(--secondary-text-color);
     margin: 50px;
     padding: 25px 10px 10px 10px;
-    width: calc(100%/3);
+    width: calc(100% / 3);
     border-radius: 15px;
     transition: all 1.5s;
   }
@@ -454,12 +802,12 @@ input:focus{
   .whyChooseUsBoxes img {
     width: 30%;
   }
-  .whyChooseUs>.box>h2{
+  .whyChooseUs > .box > h2 {
     font-size: var(--tertiary-desktop-heading-font);
   }
   .box > p {
     text-align: left;
-    font-size: var( --desktop-paragraph-font);
+    font-size: var(--desktop-paragraph-font);
   }
   /* ==========================
       WHY CHOOSE US END
@@ -486,7 +834,7 @@ input:focus{
     align-items: center;
     text-align: left;
     padding: 20px 100px;
-    font-size:var(--tertiary-desktop-heading-font)
+    font-size: var(--tertiary-desktop-heading-font);
   }
   .descImage {
     display: flex;
@@ -590,67 +938,71 @@ input:focus{
   /* ==========================
       CONTACT US START
    ==========================*/
-  /* .ContactUsBackgroundImg{
-  height: 100vh;
-  background-image: url('./Images/ContactUsBackgroundImg.png');
-  background-size: cover;
-} */
-  .ContactUsTopContainer {
-    width: 40vw;
-  }
   .ContactUsContainer {
     display: flex;
-    justify-content: center;
+    width: 100%;
+    height: 100vh;
   }
-  .ContactUs {
+  .ContactUsLBg {
     display: flex;
-    flex-direction: column;
-    background-color: var(--primary-text-color);
-    color: var(--primary-bg-color);
-    border-radius: 70px 25px;
-    margin: 30px 50px;
-  }
-  .ContactUsHeading {
-    font-size: var(--tertiary-desktop-heading-font);
-    background-color: var(--primary-color);
-    color: var(--primary-bg-color);
-    padding: 0 40px;
-  }
-  .ContactUsForm {
-    padding: 10px 70px;
-  }
-  .ContactUsForm textarea {
-    width: 350px;
-  }
-  .ContactUsForm label {
-    color: var(--secondary-text-color);
-  }
-  .ContactUsDesc {
-    color: var(--primary-text-color);
-    /* position: relative;
-    top: 100px;
-    left: 30px; */
-    margin: 30px 50px;
-  }
-  .ContactUsDesc > h4 {
-    margin: 0;
-  }
-  .contactUsSend {
-    width: 130px;
-    padding: 8px;
-    font-size: var(--desktop-paragraph-font);
-    font-weight: 600;
-    margin: 10px 0;
-    background-color: var(--primary-text-color);
-    border-radius: 30px;
-    transition: all 1s;
-    border: 2px solid var(--secondary-text-color);
-    color: var(--primary-bg-color);
-    box-shadow: 2px var(--secondary-text-color);
-  }
-  .contactUsSend:hover {
+    flex: 0.6;
     background-color: var(--primary-color);
   }
+  .ContactUsLBg img {
+    /* width: 100%; */
+    object-fit: cover;
+  }
+  .ContactUsRBg {
+    display: flex;
+    background-color: #2f2e41;
+    flex: 0.4;
+  }
+  .ContactForm {
+    padding: 50px;
+    width: 450px;
+    color: #ffffff;
+    /* z-index: 4; */
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 10%);
+    border-radius: 15px;
+    /* margin:0 auto; */
+    background: linear-gradient(#243848, #000000);
+  }
+  .name-email {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+  }
+  .ContactForm input[type="text"],
+  .ContactForm input[type="email"] {
+    border-radius: 20px;
+    background-color: #ffffff;
+    margin: 5px 0;
+    width: max-content;
+  }
+  .ContactForm textarea {
+    all: unset;
+    background-color: #ffffff;
+    color: #000000;
+    border-radius: 10px;
+    padding: 10px;
+    width: 100%;
+    height: 50px;
+    margin: 5px 0;
+  }
+  .ContactForm input[type="submit"] {
+    all: unset;
+    border-radius: 20px;
+    padding: 10px 30px;
+    background-color: #2f2e41;
+    cursor: pointer;
+    transition: all 0.3s easein ease-in-out;
+  }
+  .ContactForm input[type="submit"]:hover {
+    transform: scale(0.93);
+  }
+
   /* ==========================
       CONTACT US END
    ==========================*/
@@ -662,6 +1014,7 @@ input:focus{
     width: 100%;
     height: 60vh;
     background-size: cover;
+    object-fit: cover;
   }
   .AboutSection1 {
     background-color: var(--primary-bg-color);
@@ -680,6 +1033,11 @@ input:focus{
     color: var(--primary-text-color);
     font-size: var(--tertiary-desktop-heading-font);
     align-items: center;
+  }
+  @media screen and (max-width: 769px) {
+    .vbuImg > img {
+      height: 25vh;
+    }
   }
   /* ==========================
       ABOUT US END
@@ -726,7 +1084,7 @@ input:focus{
     margin-bottom: 0;
     text-decoration: underline;
   }
-  .PrivacyPolicyDesc >p{
+  .PrivacyPolicyDesc > p {
     font-size: var(--desktop-paragraph-font);
   }
   /* ==========================
@@ -746,7 +1104,7 @@ input:focus{
     color: var(--primary-text-color);
     text-align: center;
     padding: 20px;
-    
+
     margin: 0;
   }
   .card {
@@ -812,6 +1170,7 @@ input:focus{
   .DeveloperCard-Footer h2 {
     margin: 5px 0 0 0;
   }
+
   .DeveloperCard-Footer p {
     margin: 5px 0 10px 0;
   }
@@ -849,8 +1208,8 @@ input:focus{
     font-size: var(--secondary-desktop-heading-font);
     color: var(--primary-text-color);
   }
-  .ourStoryDesc >p,
-  .ourVisionDesc >p {
+  .ourStoryDesc > p,
+  .ourVisionDesc > p {
     padding: 0px 150px 10px 150px;
     font-size: var(--desktop-paragraph-font);
 
@@ -891,24 +1250,337 @@ input:focus{
     margin: 20px 0;
     cursor: pointer;
   }
+
   /* ==========================
       ERROR PAGE  END
    ==========================*/
+
+  /* ==========================
+      HOME NOTES PAGE START
+   ==========================*/
+  .NotesContainer,
+  .MenuContainer,
+  .HomeContainer,
+  .MyAccountContainer {
+    margin: 30px 30px 30px 170px;
+  }
+  .HomeContainer {
+    display: flex;
+    flex-direction: column;
+  }
+  .HomeContainer .HomeTop,
+  .HomeContainer .HomeBottom {
+    display: flex;
+    gap: 20px;
+  }
+  .HomeContainer .HomeTopLeft,
+  .HomeContainer .HomeBottomLeft {
+    flex: 0.8;
+  }
+  .HomeContainer .HomeTopRight,
+  .HomeContainer .HomeBottomRight {
+    flex: 0.2;
+  }
+  .HomeTopLeft img {
+    width: 100%;
+    height: 50vh;
+    /* object-fit: cover; */
+    border-radius: 20px;
+  }
+  .HeroCrouselContainer{
+    display: grid;
+  }
+  /* .HeroCrouselContainer .react-multiple-carousel__arrow {
+    display:inline;
+  } */
+  .HomeBottomRight img {
+    width: 100%;
+    margin: 50px 0;
+    object-fit: cover;
+    border-radius: 15px;
+  }
+  .HomeTopRight {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .HomeTopRight .c-1 {
+    width: 100%;
+    height: 80px;
+    background-color: var(--tertiary-bg-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+  }
+  .HomeTopRight .chats {
+    all: unset;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+  }
+  .HomeTopRight .chat-icon {
+    font-size: 30px;
+    color: var(--primary-color);
+  }
+  .HomeTopRight .c-2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    background: #303030;
+    box-shadow: 15px 12px 124px 0px rgba(0, 0, 0, 0.25);
+    padding: 20px;
+    width: -webkit-fill-available;
+  }
+  .HomeTopRight .c-2 img {
+    width: 200px;
+    height: 180px;
+    border-radius: 10px;
+    object-fit: cover;
+  }
+  .HomeTopRight .alert-icon {
+    font-size: 70px;
+    color: #c02b2b;
+  }
+  @media screen and (max-width: 1200px) {
+    .HomeTopLeft img {
+      height: 15vh;
+    }
+  }
+  @media screen and (max-width: 769px) {
+    .HomeContainer .HomeTop {
+      flex-direction: column;
+      gap: 10px;
+    }
+    .HomeTopLeft img {
+      height: auto;
+      border-radius: 5px;
+    }
+    .HomeContainer .HomeTopRight {
+      /* flex-direction: ro; */
+      align-items: flex-end;
+      gap: 10px;
+    }
+    .HomeContainer .HomeBottom {
+      display: block;
+    }
+    .HomeBottomRight img {
+      margin: 0;
+      height: auto;
+      /* display: none; */
+    }
+    .HomeTopRight {
+      /* width:fit-content;
+
+      height: fit-content;
+      padding:10px;
+      border-radius: 5px; */
+      display: none;
+    }
+
+    .HomeTopRight .c-2 p {
+      margin: 10px;
+      font-size: var(--phone-paragraph-font);
+    }
+
+    .HomeTopRight .chat-icon {
+      font-size: 20px;
+    }
+    .HomeTopRight .alert-icon {
+      /* display: none; */
+      font-size: 30px;
+    }
+  }
+  .SubjectRow,
+  .SubjectRow {
+    margin: 35px 0 0 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  .SubjectRow .SubjectItem {
+    background-color: var(--tertiary-bg-color);
+    padding: 10px 30px;
+    border-radius: 30px;
+    cursor: pointer;
+  }
+  .SubjectItem select {
+    all: unset;
+    -webkit-appearance: auto;
+    padding: 10px 20px;
+    display: inline-block;
+    cursor: pointer;
+  }
+  .SubjectRow option {
+    all: unset;
+    background-color: black;
+    color: white;
+    width: fit-content;
+    overflow: hidden;
+    cursor: pointer;
+  }
+  .NotesCard {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+    margin: 50px 0;
+  }
+
+  .NotesCardItem {
+    width: calc(100% / 5.5);
+    padding: 15px;
+    border: 1px solid var(--secondary-text-color);
+    border-radius: 10px;
+    border-left: 7px solid var(--primary-color);
+    background-color: var(--secondary-bg-color);
+  }
+  .NotesCardItem h4 {
+    /* font-size: var(--secondary-phone-heading-font); */
+    font-size: var(--tertiary-tablet-heading-font);
+    margin: 0;
+    /* text-align: center; */
+  }
+  .NotesCardItem p {
+    font-size: var(--tablet-paragraph-font);
+    color: var(--tertiary-text-color);
+    margin: 4px;
+  }
+  .bookmark {
+    color: #ffffff;
+  }
+  .NotesCardItem h6 {
+    margin: 0;
+  }
+  .NotesCardItem .title {
+    /* text-align: center; */
+    font-size: var(--desktop-paragraph-font);
+  }
+  .NotesCardItem .desc {
+    font-size: 15px;
+    color: var(--secondary-text-color);
+  }
 }
 
+/*====== PAYMENT SECTION START*/
+/*====== PAYMENT SECTION START */
+.PaymentQRContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin: 0 20%;
+}
+.PaymentQRContainer .Top,
+.PaymentQRContainer .Bottom {
+  text-align: center;
+}
+.PaymentQRContainer h5 {
+  margin: 0 0 5px 0;
+}
+.PaymentQRContainer .Top .QR {
+  display: inline-block;
+  padding: 10px;
+  background-color: #ffffff;
+}
+.PaymentQRContainer .instruction {
+  color: #42ff00;
+  font-size: var(--desktop-paragraph-font);
+}
+.PaymentQRContainer tr {
+  line-height: 2;
+  display: flex;
+  gap: 10px;
+}
+.PaymentQRContainer .Bottom button {
+  border: none;
+  background-color: var(--primary-color);
+  padding: 7px 40px;
+  color: var(--primary-text-color);
+  font-size: var(--desktop-paragraph-font);
+  border-radius: 7px;
+  cursor: pointer;
+  transition: 0.5s ease-in-out;
+}
+.PaymentQRContainer .Bottom button:hover {
+  transform: scale(0.93);
+  background-color: var(--secondary-color);
+  font-size: var(--desktop-paragraph-font);
+}
+
+/*Transacton page*/
+/*Transacton page*/
+.TransactionContainer table {
+  margin: 50px 0;
+  width: 100%;
+}
+.TransactionContainer table .header {
+  background-color: #8d0000;
+}
+.TransactionContainer table .header th {
+  padding: 5px 15px;
+}
+.TransactionContainer table td {
+  text-align: center;
+  padding: 5px 15px;
+}
+.TransactionContainer .status {
+  display: flex;
+  gap: 10px;
+}
+.TransactionContainer .status-btn {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+.verify-btn {
+  border: none;
+  background-color: var(--primary-color);
+  padding: 5px 20px;
+  color: var(--primary-text-color);
+  /* font-size: var(--desktop-paragraph-font); */
+  border-radius: 3px;
+  cursor: pointer;
+}
+.cancel-btn {
+  all: unset;
+  cursor: pointer;
+  border-radius: 50%;
+}
+.cancel-icon {
+  font-size: 20px;
+}
+@media screen and (max-width: 769px) {
+  .TransactionContainer {
+    overflow: scroll;
+    font-size: var(--phone-paragraph-font);
+  }
+  .TransactionContainer .sno,
+  .TransactionContainer .type,
+  .TransactionContainer .amount,
+  .TransactionContainer .time {
+    display: none;
+  }
+
+  .PaymentQRContainer {
+    margin: 0 10px;
+  }
+  .PaymentQRContainer h2 {
+    font-size: var(--secondary-phone-heading-font);
+  }
+  .PaymentQRContainer h3 {
+    font-size: var(--tertiary-phone-heading-font);
+  }
+  .PaymentQRContainer tr {
+    line-height: 1.2;
+  }
+}
 /* ---######## Desktop CSS END ########---*/
 /* ---######## Desktop CSS END ########---*/
 /* ---######## Desktop CSS END ########---*/
 /* ---######## Desktop CSS END ########---*/
-
-
-
-
-
-
-
-
-
 
 /* ---######## Mobile View CSS START ########---*/
 /* ---######## Mobile View CSS START ########---*/
@@ -918,15 +1590,53 @@ input:focus{
   /* ==========================
      NAVBAR START
    ==========================*/
-   .nav-items > li {    
+
+  #navbar {
+    padding: 0;
+  }
+  .nav-items > li {
     padding: 0 0.5rem;
     font-weight: 500;
-    font-size: 13px;    
+    font-size: 13px;
   }
-  .nav-logo{
-    width:80px;
+  .search {
+    display: none;
   }
 
+  .search input[type="text"] {
+    width: 20vw;
+    padding: 0 10px;
+  }
+  .CourseSelect select,
+  .SemSelect select {
+    font-size: 13px;
+  }
+  .avtar-img {
+    width: 30px;
+    height: 30px;
+  }
+  .NavbarContainer .nav-logo {
+    width: 50px;
+    height: 50px;
+  }
+  .nav-right {
+    gap: 20px;
+    margin-right: 10px;
+  }
+
+  .leftNavbar .upperSection .leftNavbarItem li,
+  .leftNavbar .lowerSection .leftNavbarItem li {
+    font-size: 8px;
+    padding: 5px 0;
+  }
+  .leftNavbarItem {
+    flex-direction: column;
+
+    padding: 10px 5px;
+  }
+  .leftNavbarItem:hover {
+    background-color: var(--primary-color);
+  }
 
   /* ==========================
      LOGIN / SIGNUP PAGE START
@@ -944,11 +1654,9 @@ input:focus{
     font-size: var(--primary-phone-heading-font);
   }
   .signup-desc > h2 {
-    
     font-size: var(--primary-phone-heading-font);
   }
   .signup-desc > p {
-    
     font-size: var(--secondary-phone-heading-font);
   }
   .button {
@@ -960,7 +1668,29 @@ input:focus{
   /* ==========================
      LOGIN / SIGNUP PAGE END
    ==========================*/
+  .NotesCard {
+    gap: 20px;
+  }
 
+  .SubjectRow .SubjectItem {
+    font-size: var(--phone-paragraph-font);
+    padding: 8px 10px;
+  }
+  .SubjectItem select {
+    padding: 5px 0;
+  }
+
+  .NotesCardItem {
+    width: calc(85%);
+  }
+  .NotesCardItem h4 {
+    margin-left: 5px;
+    font-size: var(--tertiary-phone-heading-font);
+  }
+  .NotesCardItem p {
+    color: var(--secondary-text-color);
+    font-size: var(--phone-paragraph-font);
+  }
   /* ==========================
      COUNTER START
    ==========================*/
@@ -984,21 +1714,20 @@ input:focus{
     display: flex;
     flex-direction: column;
     align-items: center;
-    
   }
   .whyChooseUsBoxes .box {
-    margin: 30px 40px;    
+    margin: 30px 40px;
     width: 70%;
   }
   .whyChooseUsHeading {
     font-size: var(--tertiary-phone-heading-font);
   }
-  .whyChooseUs>.box>h2{
+  .whyChooseUs > .box > h2 {
     font-size: var(--tertiary-phone-heading-font);
   }
   .box > p {
     text-align: left;
-    font-size: var( --phone-paragraph-font);
+    font-size: var(--phone-paragraph-font);
   }
   /* ==========================
      WHY CHOOSE US START
@@ -1022,7 +1751,7 @@ input:focus{
   }
   .descImage img {
     width: 80vw;
-    height:30vh;
+    height: 30vh;
   }
   .Image-content-section3 {
     display: flex;
@@ -1037,25 +1766,45 @@ input:focus{
   /* ==========================
      CONTACT US START
    ==========================*/
-  
-  .ContactUsTopContainer {
+
+  .ContactUsContainer {
+    display: flex;
+    flex-direction: column;
+  }
+  .ContactUsLBg {
+    flex: 0.75;
+  }
+  .ContactUsRBg {
+    flex: 0.25;
+  }
+
+  .ContactUsLBg img {
     width: 100%;
+    object-fit: none;
   }
-  .ContactUsForm {
-    padding: 10px 40px;
+
+  .ContactForm {
+    padding: 20px;
+    width: 270px;
+
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 10%);
   }
-  .ContactUsHeading>h2{
-    font-size: var(--primary-phone-heading-font);
+  .ContactForm input[type="text"],
+  .ContactForm input[type="email"] {
+    width: 90%;
   }
-  .contactUsSend{
-    width: 100px;
-    font-size: var(--phone-paragraph-font);
+  .name-email {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 10px;
   }
-  .ContactUsForm textarea {
-    width: 200px;
-    height: 90px;
+  .ContactForm textarea {
+    width: 90%;
   }
-  
+
   /* ==========================
      CONTACT US END
    ==========================*/
@@ -1072,17 +1821,17 @@ input:focus{
   .WhoWeAre p {
     font-size: var(--phone-paragraph-font);
   }
-  .DeveloperCrouselHeading > h1{
+  .DeveloperCrouselHeading > h1 {
     font-size: var(--secondary-phone-heading-font);
   }
-  .card-header h2{
+  .card-header h2 {
     font-size: var(--secondary-phone-heading-font);
   }
-  .card p{
+  .card p {
     font-size: var(--phone-paragraph-font);
   }
-  .react-multiple-carousel__arrow{
-    display:none;
+  .react-multiple-carousel__arrow {
+    display: none;
   }
   /* ==========================
      WHO WE ARE END
@@ -1091,44 +1840,40 @@ input:focus{
   /* ==========================
     FOOTER START
    ==========================*/
-   .footerContainer{
+  .footerContainer {
     display: flex;
     flex-direction: column;
     align-items: stretch;
-    padding:15px;
+    padding: 15px;
     font-size: var(--phone-paragraph-font);
-   }
-   .middleTopFooter{
+  }
+  .middleTopFooter {
     display: flex;
-    gap:0;
-   }
-   .rightFooter{
+    gap: 0;
+  }
+  .rightFooter {
     display: none;
-   }
+  }
   /* ==========================
    FOOTER END
    ==========================*/
 
-
-
-   /* About page  */
-   /* About page  */
-   .vbuImg > img {
+  /* About page  */
+  /* About page  */
+  .vbuImg > img {
     width: 100%;
-    height: 30vh;
-    
+    height: 25vh;
   }
-  .AboutSection1{
-    display:flex;
+  .AboutSection1 {
+    display: flex;
     align-items: center;
-    padding:10px;
+    padding: 10px;
     font-size: 15px;
   }
-  .AboutSection1Desc {   
+  .AboutSection1Desc {
     font-size: var(--phone-paragraph-font);
-    
   }
-  .AboutSection1>img{
+  .AboutSection1 > img {
     height: 10vh;
   }
 
@@ -1151,7 +1896,8 @@ input:focus{
     font-size: var(--secondary-phone-heading-font);
     margin-bottom: 0;
   }
-  .PrivacyPolicyDesc>p, .TermsAndConditionDesc>p{
+  .PrivacyPolicyDesc > p,
+  .TermsAndConditionDesc > p {
     font-size: var(--phone-paragraph-font);
   }
   /* ==========================
@@ -1166,10 +1912,10 @@ input:focus{
     text-align: center;
     font-size: var(--secondary-phone-heading-font);
   }
-  .ourStoryDesc>p,
-  .ourVisionDesc>p {
+  .ourStoryDesc > p,
+  .ourVisionDesc > p {
     padding: 0 20px 20px 20px;
-    font-size: var(--phone-paragraph-font)
+    font-size: var(--phone-paragraph-font);
   }
   /* ==========================
      OUR STORY AND VISION END
@@ -1192,28 +1938,35 @@ input:focus{
      ERROR PAGE END
    ==========================*/
 
-
   /* ==========================
      Developr Crousel start
    ==========================*/
-  .DeveloperCrouselContainer{
-    padding:0;
-    
+  .DeveloperCrouselContainer {
+    padding: 0;
   }
-  .DeveloperCard-header img{
-    width:100px;
+  .DeveloperCard-header img {
+    width: 100px;
   }
-  .DeveloperCard-Footer h2{
-     font-size: var(--secondary-phone-heading-font);
+  .DeveloperCard-Footer h2 {
+    font-size: var(--secondary-phone-heading-font);
   }
-  .DeveloperCard-Footer p{
+  .DeveloperCard-Footer p {
     font-size: var(--phone-paragraph-font);
-
   }
 
   /* ==========================
     Developr Crousel start end
    ==========================*/
+
+  /* ==========================
+      NOTES PAGE START
+   ==========================*/
+  .NotesContainer,
+  .MenuContainer,
+  .HomeContainer,
+  .MyAccountContainer {
+    margin: 20px 20px 20px 65px;
+  }
 }
 
 /* ---######## Mobile View CSS END ########---*/
@@ -1221,27 +1974,15 @@ input:focus{
 /* ---######## Mobile View CSS END ########---*/
 /* ---######## Mobile View CSS END ########---*/
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 /* ---######## Tablet View CSS START ########---*/
 /* ---######## Tablet View CSS START ########---*/
 /* ---######## Tablet View CSS START ########---*/
 /* ---######## Tablet View CSS START ########---*/
 
-@media screen and (min-width: 768px)and (max-width:1023px) {
-  .login-form,.signup-form{
-    width:75%;
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  .login-form,
+  .signup-form {
+    width: 75%;
   }
   /* COUNTER  */
   .Counter-row img {
@@ -1288,7 +2029,7 @@ input:focus{
   /* ABOUT  */
   .vbuImg > img {
     width: 100%;
-    height: 30vh;
+    height: 25vh;
     background-size: cover;
   }
   .AboutSection1 {
@@ -1328,6 +2069,3 @@ input:focus{
 /* ---######## Tablet View CSS END ########---*/
 /* ---######## Tablet View CSS END ########---*/
 /* ---######## Tablet View CSS END ########---*/
-
-
-

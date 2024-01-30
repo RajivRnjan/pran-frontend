@@ -37,7 +37,7 @@ function Crousel() {
         >
           <div className="card">
             <div className="card-header">
-              <img src="https://play-lh.googleusercontent.com/a-/ACB-R5TEIek-bQYQVkMrYNl8n7vjwk7EWkP7X8kN1HWVBg=s32-rw" />
+              <img src="/Images/yashwant.png"  alt="review-img"/>
               <h2>Yashwant Mandal</h2>
             </div>
 
@@ -48,7 +48,7 @@ function Crousel() {
           </div>
           <div className="card">
             <div className="card-header">
-              <img src="https://play-lh.googleusercontent.com/a-/ACB-R5Tv9LcqVCNm65Wy1vxx2qvqGBiXrgjSrWEf98iLrg=s32-rw" />
+              <img src="/Images/ankitRaj.png" alt="review-img" />
               <h2>Ankit Raj</h2>
             </div>
 
@@ -61,7 +61,7 @@ function Crousel() {
 
           <div className="card">
             <div className="card-header">
-              <img src="https://play-lh.googleusercontent.com/a-/ACB-R5SLHRiHkJaMDqHkhihIa1uo9D52TEDxSp3luHMg1w=s32-rw" />
+              <img src="/Images/siddharth.png" alt="review-img" />
               <h2>Siddharth Kumar</h2>
             </div>
 
@@ -72,7 +72,7 @@ function Crousel() {
           </div>
           <div className="card">
             <div className="card-header">
-              <img src="https://play-lh.googleusercontent.com/a-/ACB-R5TiD3l5CR0ufpB934pb5cQBbhNECoLdGu4mD7JskA=s32-rw" />
+            <img src="/Images/pinki.png" alt="review-img" />
               <h2>Pinki Kumari</h2>
             </div>
 
@@ -83,7 +83,8 @@ function Crousel() {
           </div>
           <div className="card">
             <div className="card-header">
-              <img src="https://play-lh.googleusercontent.com/a-/ACB-R5RoLhf4lHTlUplKzztQl8QvCnz4oFirlpEAycsRxw=s32-rw" />
+             
+              <img src="/Images/rajendra.png" alt="review-img" />
               <h2>Rajendra Kumar</h2>
             </div>
 
@@ -95,7 +96,7 @@ function Crousel() {
 
           <div className="card">
             <div className="card-header">
-              <img src="https://play-lh.googleusercontent.com/a-/ACB-R5SPjaqD94sTvJWaxAu2y6MrSGMnYOV1ilq4MX2N=s32-rw" />
+            <img src="/Images/aman.png" alt="review-img" />
               <h2>Aman Sourav</h2>
             </div>
 

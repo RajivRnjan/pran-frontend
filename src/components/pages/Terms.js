@@ -1,10 +1,14 @@
 import React from "react";
 import Navbar from "../Navbar";
 import Footer from "../Footer";
+import { Helmet } from "react-helmet";
 
 function Terms() {
   return (
     <>
+    <Helmet>
+				<title>PRAN - Terms and Condition</title>
+			</Helmet>
     <Navbar/>
       <div className="TermsAndConditon">
         <div className="TermsAndConditonHeading">

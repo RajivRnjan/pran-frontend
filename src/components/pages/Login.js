@@ -1,4 +1,9 @@
 import React from "react";
+import { ToastContainer, toast } from 'react-toastify';
+import { Helmet } from "react-helmet";
+
+
+
 import axios from "axios";
 import { useState, useEffect } from "react";
 import "../../App.css";
@@ -11,7 +16,7 @@ import study from "../../Images/study.png";
 import { Link, useNavigate } from "react-router-dom";
 import { IoMdContact } from "react-icons/io";
 import { BsEyeFill } from "react-icons/bs";
-import {RiEyeCloseFill} from "react-icons/ri"
+import {BsEyeSlashFill} from "react-icons/bs"
 
 function Login() {
   const navigate = useNavigate();
@@ -21,9 +26,11 @@ function Login() {
   };
 
   const checkLogin = () => {
+
     if (localStorage.getItem("auth_token")) {
-      navigate("/home");
+      navigate("/");
     }
+  
   };
   checkLogin();
 
@@ -35,6 +42,7 @@ function Login() {
 
     if (splitEmail[1] !== "gmail.com") {
       document.querySelector("#email").style.borderBottom = "1px solid red";
+    
     } else {
       document.querySelector("#email").style.borderBottom = "1px solid #5B5B5B";
     }
@@ -89,103 +97,143 @@ function Login() {
   const [loading, setLoading] = useState(false);
 
   const submitHandler = (e) => {
+    toast("Please Wait....",{
+      theme:'dark',
+      autoClose:2000,
+    })
     e.preventDefault();
+   
+
     
     setLoading(true);
     axios
-      .post("https://pran-app-backend.onrender.com/api/user/login", {
+      .post("/api/user/login", {
         email: e.target.email.value,
         password: e.target.password.value,
       })
       .then((res) => {
-        if (res.data.msg === "Login Successfull!") {
-          localStorage.setItem("auth_token", res.data.auth_token);
+        // console.log(res.data.msg)
+        // console.log(res.data.msg.search("Login Successfull"))
+        if (res.data.msg.search("Login Successfull") !== -1) {
+          localStorage.setItem("auth_token", res.data.token);
           setLoading(false);
+          // console.log(localStorage)
           checkLogin();
         } else {
           setLoading(false);
-          alert(res.data.msg);
+         
+           toast(res.data.msg,{
+            theme:'dark',
+            autoClose:2000,
+          });
+          // alert(res.data.msg);
         }
 
        
       })
       .catch((err) => {
         setLoading(false);
-        alert("Something Went Wrong...Try Again");
+        toast("Something Went Wrong...Try Again",{
+          theme:'dark',
+          autoClose:2000,
+        })
+       
       });
   };
 
   return (
-    <>
-      <Navbar />
-      {loading ? <Spinner /> : ""}
-    
-      <div className="background-img">
-        <div className="top-container">
-          <div className="login-container">
-            <div className="login-form">
-              <h2>Sign In</h2>
+		<>
+			<Helmet>
+				<title>PRAN - Login</title>
+			</Helmet>
+			<Navbar />
 
-              <form onSubmit={submitHandler}>
-                <div className="input-container" id="email">
-                  <input type="email" name="email" placeholder="E-mail" required onChange={emailHandle} />
-                  <IoMdContact size="25px" color="#5B5B5B" />
-                </div>
+			{loading ? <Spinner /> : ""}
+			<ToastContainer />
 
-                <div className="input-container" id="password" required>
-                  <input
-                    type={passwordType}
-                    name="password"
-                    value = {passwordInput}
-                    placeholder="Password"
-                    onChange={passwordHandler}
-                    
-                  />
-                  <span onClick={togglePassword}>
-                  {passwordType === "password" ? < RiEyeCloseFill size="25px" color="#5B5B5B"  /> : <BsEyeFill size="25px" color="#5B5B5B"/>}
-                  </span>
-                </div>
+			<div className="background-img">
+				<div className="top-container">
+					<div className="login-container">
+						<div className="login-form">
+							<h2>Sign In</h2>
 
-                <p className="forgot-password">
-                  <a>Forgot Password ?</a>
-                </p>
-                <br />
-                <br />
+							<form onSubmit={submitHandler}>
+								<div className="input-container" id="email">
+									<input
+										type="email"
+										name="email"
+										placeholder="E-mail"
+										required
+										onChange={emailHandle}
+									/>
+									<IoMdContact size="25px" color="#5B5B5B" />
+								</div>
 
-                <div className="login-button">
-                  <button className="login-btn" id="login-btn">Login</button>
-                </div>
-                <br />
-              </form>
+								<div className="input-container" id="password" required>
+									<input
+										type={passwordType}
+										name="password"
+										value={passwordInput}
+										placeholder="Password"
+										onChange={passwordHandler}
+									/>
+									<span onClick={togglePassword}>
+										{passwordType === "password" ? (
+											<BsEyeSlashFill size="22px" color="#5B5B5B" />
+										) : (
+											<BsEyeFill size="22px" color="#5B5B5B" />
+										)}
+									</span>
+								</div>
 
-              <p className="login-footer">
-                Don't have an Account. <Link to="/Signup">Click Here</Link>
-              </p>
-              <br />
-            </div>
-          </div>
+								<p className="forgot-password">
+									<Link to="/forgot">Forgot Password ?</Link>
+								</p>
+								<br />
+								<br />
 
-          <div className="login-desc">
-            <img src={study} alt="study" width="200px" />
-            <h2> # All At One Place </h2>
-            <p>We Provide good source of material to Study</p>
-            <br />
+								<div className="login-button">
+									<button className="login-btn" id="login-btn">
+										Login
+									</button>
+								</div>
+								<br />
+							</form>
 
-            <div className="button">
-              <button onClick={navigateToSignup} className="sign-up">
-                Sign Up
-              </button>
-              <button className="get-started">Get Started</button>
-            </div>
-          </div>
-        </div>
-      </div>
+							<p className="login-footer">
+								Don't have an Account. <Link to="/Signup">Click Here</Link>
+							</p>
+							<p
+								style={{ color: "#42FF00", paddingLeft: 20, paddingRight: 20 }}
+							>
+								Your Old Login Details are no more. So Kindly request to create
+								Fresh Account
+							</p>
+							<br />
+						</div>
+					</div>
 
-      <LoginSignupHome />
-      <Crousel />
-      <Footer/>
-    </>
-  );
+					<div className="login-desc">
+						<img src={study} alt="study" width="200px" />
+						<h2> # All At One Place </h2>
+						<p>We Provide good source of material to Study</p>
+						<br />
+
+						<div className="button">
+							<button onClick={navigateToSignup} className="sign-up">
+								Sign Up
+							</button>
+							<button className="get-started">Get Started</button>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<LoginSignupHome />
+			<Crousel />
+			<Footer />
+		</>
+	);
 }
 
 export default Login;

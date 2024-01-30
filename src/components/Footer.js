@@ -5,44 +5,63 @@ import googlePlay from "../Images/google play.png";
 import { Link } from "react-router-dom";
 
 function Footer() {
+
+  let date = new Date();
+  let year = date.getFullYear();
   const gotoTopWindow = () => {
     window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
   };
-
-
-
 
   return (
     <>
       <div className="footerContainer">
         <div className="leftFooter">
           <div className="logo">
-            <img src={logo} alt="logo" />
+            <Link to="/"><img src={logo} alt="logo" /></Link>
           </div>
           <div className="footerEmail">
             <MdEmail size={"20px"} />
-            <p>pran7181@gmail.com</p>
+            <p><Link to ="mailto:pran7181@gmail.com">pran7181@gmail.com</Link></p>
           </div>
         </div>
         <div className="middleFooter">
           <div className="middleTopFooter">
             <div className="middleTopLeftItem">
               <ul>
-                <Link to="/"><li onClick={gotoTopWindow}>Home</li></Link>
-                <li>Notes</li>
-                <li>Menu</li>
-                <li>About Us</li>
+                <Link to="/">
+                  <li onClick={gotoTopWindow}>Home</li>
+                </Link>
+                <li onClick={gotoTopWindow}>
+                  <Link to="/notes">Notes</Link>
+                </li>
+                <li onClick={gotoTopWindow}>
+                  <Link to="/">Menu</Link>
+                </li>
+              
+                <li onClick={gotoTopWindow}>
+                  <Link to="/AboutUs">About Us</Link>
+                </li>
                 <li>Chats</li>
               </ul>
             </div>
 
             <div className="middleTopMiddleItem">
               <ul>
-                <li>Holiday</li>
-                <li>Syllabus</li>
-                <li>PYQ</li>
-                <li>E-Book</li>
-                <li>Video</li>
+                <li onClick={gotoTopWindow}>
+                  <Link to="/">Holiday</Link>
+                </li>
+                <li onClick={gotoTopWindow}>
+                  <Link to="/">Syllabus</Link>
+                </li>
+                <li onClick={gotoTopWindow}>
+                  <Link to="/">PYQ</Link>
+                </li>
+                <li onClick={gotoTopWindow}>
+                  <Link to="/">E-Book</Link>
+                </li>
+                <li onClick={gotoTopWindow}>
+                  <Link to="/">Video</Link>
+                </li>
               </ul>
             </div>
 
@@ -62,13 +81,20 @@ function Footer() {
           </div>
         </div>
         <div className="rightFooter">
-          <Link to="https://play.google.com/store/search?q=pran%20vbu&c=apps">
+          <Link to="https://play.google.com/store/apps/details?id=com.navinkrv.pran&pcampaignid=web_share" target="_blank">
             <img src={googlePlay} alt="googlePlay" />
           </Link>
         </div>
       </div>
       <div className="BottomFooter">
-        <p>&copy; Copyright 2023 by PRAN. All Rights Reserved.</p>
+        <p>
+          
+          &copy; Copyright {year} by{" "}
+          <a href="https://techiesgateway.com" target="_blank">
+            <b>TechiesGateway.</b>
+          </a>{" "}
+          All Rights Reserved.
+        </p>
       </div>
     </>
   );
