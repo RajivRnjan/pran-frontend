@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/static/css/main.b136e371.css",
-    "main.js": "/static/js/main.d7817959.js",
-    "static/js/787.8eedfa33.chunk.js": "/static/js/787.8eedfa33.chunk.js",
+    "main.js": "/static/js/main.1f106c6c.js",
+    "static/js/787.608b9988.chunk.js": "/static/js/787.608b9988.chunk.js",
     "static/media/Durga1024.png": "/static/media/Durga1024.29b7309049c17edc607e.png",
     "static/media/photo.png": "/static/media/photo.0ca1e3d492266092ba70.png",
     "static/media/vbuImg.png": "/static/media/vbuImg.75ba4ba4ec9507454b6f.png",
@@ -31,11 +31,11 @@
     "static/media/googleplay.svg": "/static/media/googleplay.7660dcd6b3b40be498aec2dcd032a4cf.svg",
     "index.html": "/index.html",
     "main.b136e371.css.map": "/static/css/main.b136e371.css.map",
-    "main.d7817959.js.map": "/static/js/main.d7817959.js.map",
-    "787.8eedfa33.chunk.js.map": "/static/js/787.8eedfa33.chunk.js.map"
+    "main.1f106c6c.js.map": "/static/js/main.1f106c6c.js.map",
+    "787.608b9988.chunk.js.map": "/static/js/787.608b9988.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.b136e371.css",
-    "static/js/main.d7817959.js"
+    "static/js/main.1f106c6c.js"
   ]
 }
